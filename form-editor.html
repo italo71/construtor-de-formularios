@@ -10,18 +10,23 @@
     <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/bootstrap/css/bootstrap.css">
     <link rel="stylesheet"
         href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/select2/dist/css/select2.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/node-waves/waves.css">
     <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/jquery-ui/jquery-ui.min.css">
     <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/css/style.min.css">
     <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/css/main.css">
     <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/datatables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="form-editor.css">
     <title>Document</title>
 </head>
 
 <body>
     <div class="container col-md-12">
-        <div class="card col-md-9 justify-content-center">
+        <div class="card col-md-8 justify-content-center">
             <div class="">
                 <div class="w-100">
                     <h1>**Nome da Empresa**</h1>
@@ -68,66 +73,157 @@
                 </div>
             </div>
         </div>
-        <div class="card col-md-3 navbar-right ">
-            
-                <div class="justify-content-center">
-                    <h2>Templates</h2>
+        <div class="card col-md-4 navbar-right ">
+
+            <div class="justify-content-center">
+                <h2>Templates</h2>
+            </div>
+            <div class="justify-content-center">
+                <div class="card col-md-12">
+                    <div class="align-center">
+                        <h6 id="text_quest">Nos de sua opnião sobre nosso atendimento</h6>
+                    </div>
+                    <div class="col-md-12 justify-content-center">
+                        <input type="text" id="text_input" class="m-b-10 w-100" placeholder="Digite Aqui!"
+                            style="font-size: 65%;">
+                    </div>
                 </div>
-                <div class="justify-content-center">
-                    <div class="card col-md-12">
+                <div>
+                    <button class="btn btn-success mais">
+                        <span class="material-symbols-outlined">
+                            add
+                        </span>
+                    </button>
+                    <button class="btn btn-danger menos">
+                        <span class="material-symbols-outlined">
+                            remove
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="justify-content-center">
+                <div class="card col-md-12">
+                    <div class="">
                         <div class="align-center">
-                            <h6 id="text_quest">Nos de sua opnião sobre nosso atendimento</h6>
+                            <h6 id="nps_quest">Numa escala de 0 a 10, quanto você indicaria a <span
+                                    id="nome_emp">**Nossa
+                                    empresa**</span> a um amigo?</h6>
                         </div>
-                        <div class="col-md-12 justify-content-center">
-                            <input type="text" id="text_input" class="m-b-10 w-100" placeholder="Digite Aqui!"
-                                style="font-size: 65%;">
+                        <div class="w-100" id="notas_nps">
+                            <div class="nota_"><button class="btn_" id="n_0_">0</button></div>
+                            <div class="nota_"><button class="btn_" id="n_1_">1</button></div>
+                            <div class="nota_"><button class="btn_" id="n_2_">2</button></div>
+                            <div class="nota_"><button class="btn_" id="n_3_">3</button></div>
+                            <div class="nota_"><button class="btn_" id="n_4_">4</button></div>
+                            <div class="nota_"><button class="btn_" id="n_5_">5</button></div>
+                            <div class="nota_"><button class="btn_" id="n_6_">6</button></div>
+                            <div class="nota_"><button class="btn_" id="n_7_">7</button></div>
+                            <div class="nota_"><button class="btn_" id="n_8_">8</button></div>
+                            <div class="nota_"><button class="btn_" id="n_9_">9</button></div>
+                            <div class="nota_"><button class="btn_" id="n_10_">10</button></div>
+                            <div class="">
+                                <span id="n_p_1_"><b>NÂO INDICARIA</b></span>
+                                <span id="n_p_2_"><b>INDICARIA</b></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="justfy-content-center">
-                    <div class="card col-md-12">
-                        <div class="">
-                            <div class="align-center">
-                                <h6 id="nps_quest">Numa escala de 0 a 10, quanto você indicaria a <span id="nome_emp">**Nossa
-                                        empresa**</span> a um amigo?</h6>
-                            </div>
-                            <div class="col-12">
-                                <div class="col-12 align-center" id="notas_nps">
-                                    <div class="nota"><button class="btn" id="n_0"
-                                            onclick="alter_color_black('n_0', 'n');">0</button></div>
-                                    <div class="nota"><button class="btn" id="n_1"
-                                            onclick="alter_color_black('n_1', 'n');">1</button></div>
-                                    <div class="nota"><button class="btn" id="n_2"
-                                            onclick="alter_color_black('n_2', 'n');">2</button></div>
-                                    <div class="nota"><button class="btn" id="n_3"
-                                            onclick="alter_color_black('n_3', 'n');">3</button></div>
-                                    <div class="nota"><button class="btn" id="n_4"
-                                            onclick="alter_color_black('n_4', 'n');">4</button></div>
-                                    <div class="nota"><button class="btn" id="n_5"
-                                            onclick="alter_color_black('n_5', 'n');">5</button></div>
-                                    <div class="nota"><button class="btn" id="n_6"
-                                            onclick="alter_color_black('n_6', 'n');">6</button></div>
-                                    <div class="nota"><button class="btn" id="n_7"
-                                            onclick="alter_color_black('n_7', 'n');">7</button></div>
-                                    <div class="nota"><button class="btn" id="n_8"
-                                            onclick="alter_color_black('n_8', 'n');">8</button></div>
-                                    <div class="nota"><button class="btn" id="n_9"
-                                            onclick="alter_color_black('n_9', 'n');">9</button></div>
-                                    <div class="nota"><button class="btn" id="n_10"
-                                            onclick=" alter_color_black('n_10', 'n');">10</button></div>
-                                    <div class="">
-                                        <span id="n_p_1"><b>NÂO INDICARIA</b></span>
-                                        <span id="n_p_2"><b>INDICARIA</b></span>
+            </div>
+            <div class="justify-content-center">
+                <div class="card col-12">
+                    <div class="align-center col-md-12">
+                        <h6 id="csat_quest">Qual a sua satisfação com o nosso atendimento?</h6>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="align-center" id="notas_csat">
+                            <div class="emojis col-md-12"><button class="btn_emoji_" id="e_0_"><i
+                                        class="bi bi-emoji-laughing"></i><span>Muito Satisfeito</span></button></div>
+                            <div class="emojis col-md-12"><button class="btn_emoji_" id="e_1_"><i
+                                        class="bi bi-emoji-smile"></i><span>Satisfeito</span></button></div>
+                            <div class="emojis col-md-12"><button class="btn_emoji_" id="e_2_"><i
+                                        class="bi bi-emoji-neutral"></i><span>Indiferente</span></button></div>
+                            <div class="emojis col-md-12"><button class="btn_emoji_" id="e_3_"><i
+                                        class="bi bi-emoji-frown"></i><span>Insatifeito</span></button></div>
+                            <div class="emojis col-md-12"><button class="btn_emoji_" id="e_4_"><i
+                                        class="bi bi-emoji-angry"></i><span>Muito Insatifeito</span></button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="justify-content-center">
+                <div class="card col-md-12">
+                    <div class="align-center">
+                        <h6 id="csat_quest">**Como você classificaria a *nossa empresa* sobre o valor total que a
+                            empresa
+                            oferece,
+                            em comparação ao valor total oferecido por outros fornecedores de produtos / serviços
+                            similares?**</h6>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="align-center" id="notas_nvs">
+                            <div class="d-flex justify-content-center">
+                                <div class="align_text_justfy_">
+                                    <div class="drop_"><input type="radio" name="tipo" class="input_range_">
+                                        <label for="">significativamente melhor</label>
+                                    </div>
+                                    <div class="drop_"><input type="radio" name="tipo" class="input_range_">
+                                        <label for="">Um pouco melhor</label>
+                                    </div>
+                                    <div class="drop_"><input type="radio" name="tipo" class="input_range_">
+                                        <label for="">Nem melhor, nem pior</label>
+                                    </div>
+                                    <div class="drop_"><input type="radio" name="tipo" class="input_range_">
+                                        <label for="">Um pouco pior</label>
+                                    </div>
+                                    <div class="drop_"><input type="radio" name="tipo" class="input_range_">
+                                        <label for="">significativamente pior</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="justify-content-center">
+                <div class="card col-md-12 align-items-center">
+                    <div class="align-center">
+                        <h6 id="double_quest">Vistoria foi aprovada</h6>
+                    </div>
+                    <div class="justify-content-center">
+                        <div class="col-md-12">
+                            <input type="radio" name="sim-nao" id=""><label for="">Sim</label><br>
+                            <input type="radio" name="sim-nao" id=""><label for="">Não</label><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="justify-content-center">
+                <div class="card col-md-12 align-items-center">
+                    <div class="align-center">
+                        <h6 id="fiveB_quest">Avalie nossos serviço de 1 a 5</h6>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="align-center" id="notas_five">
+                            <div class="align-center" id="notas_five">
+                                <div class="nota_five_"><button class="btn_five_" id="f_1_">1</button></div>
+                                <div class="nota_five_"><button class="btn_five_" id="f_2_">2</button></div>
+                                <div class="nota_five_"><button class="btn_five_" id="f_3_">3</button></div>
+                                <div class="nota_five_"><button class="btn_five_" id="f_4_">4</button></div>
+                                <div class="nota_five_"><button class="btn_five_" id="f_5_">5</button></div>
+                            </div>
+                            <div class="justify-content-center">
+                                <div class="col-md-12">
+                                    <span id="f_p_1_"><b>RUIM</b></span>
+                                    <span id="f_p_2_"><b>EXELENTE</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    </div>
 
 
     <!-- Jquery Core Js -->

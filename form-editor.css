@@ -2,90 +2,233 @@
     margin: 0;
 }
 
-.nota{
-    width: 35px;
-    height: 35px;
-    border-radius: 35px;
+/*  */
+
+.nota_{
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
     display: inline-block;
     color: white;
-    margin: 5px;
+    margin-bottom: 25px;
+    margin-right: 15px;
 }
 
 ul{
     list-style: none;
 }
 
-.inp_nota{
+.inp_nota_{
     display: none;
 }
 
-.nota .btn{
+.nota_{
+    margin-right: 16px;
+}
+
+.nota_ .btn_{
+
     border-radius: 100% !important;
+    box-shadow: none !important;
+    z-index: 99;
+    font-weight: bold;
+    border: none;
+    position: relative;
+    align-content: space-between;
+}
+
+.btn_{
+    width: 23px;
+    height: 23px;
+    padding: 0 !important;
+}
+
+#notas_nps_{
+    margin-top: 0px;
+}
+
+.btn_:hover{
+    color: white !important;
+    background-color: black !important;
+}
+
+#n_p_1_{
+    float: left;
+    font-size: 8px;
+}
+
+#n_p_2_{
+    float: right;
+    font-size: 8px;
+}
+
+#n_0_{
+    background-color: red;
+    color: black;
+}
+#n_1_{
+    background-color: rgb(255, 90, 0);
+    color: black;
+}
+#n_2_{
+    background-color: rgb(255, 120, 0);
+    color: black;
+}
+#n_3_{
+    background-color: rgb(255, 150, 0);
+    color: black;
+}
+#n_4_{
+    background-color: rgb(255, 200, 0);
+    color: black;
+}
+#n_5_{
+    background-color: rgb(255, 255, 0);
+    color: black;
+}
+#n_6_{
+    background-color: rgb(233, 255, 40);
+    color: black;
+}
+#n_7_{
+    background-color: rgb(214, 255, 65);
+    color: black;
+}
+#n_8_{
+    background-color: rgb(200, 255, 34);
+    color: black;
+}
+#n_9_{
+    background-color: rgb(150, 255, 0);
+    color: black;
+}
+#n_10_{
+    background-color: rgb(0, 255, 0);
+    color: black;
+}
+
+/* CSAT */
+
+i{
+    font-size: 20px;
+}
+
+#e_0_{
+    color: rgb(0, 255, 0);
+}
+#e_1_{
+    color: rgb(57, 127, 0);
+}
+#e_2_{
+    color: rgb(117, 117, 117);
+}
+#e_3_{
+    color: rgb(200, 100, 0);
+}
+#e_4_{
+    color: rgb(255, 0, 0);
+}
+
+.emojis_{
+    margin: 0 auto;
+    text-align: left;
+}
+
+.btn_emoji_ span{
+    text-align: center;
+    margin: 1px 1px 1px 5px;
+    font-size: 100%;
+}
+
+
+.btn_emoji_{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    box-shadow: none;
+    text-align: justify;
+    align-items: center;
+}
+
+.btn_emoji_:hover{
+    background-color: rgba(163, 255, 255, 0.274) !important;
+    border-radius: 50px;
+}
+
+/* NVS */
+
+.input_range_{
+    display: inline-block;
+}
+
+.drop_{
+    display: block;
+}
+.drop_ input{
+    float: left;
+}
+
+/* fiveB */
+
+.nota_five_{
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    display: inline-block;
+    color: white;
+    margin: 5px;
+}
+
+
+.inp_nota_{
+    display: none;
+}
+
+.nota_five_ .btn_five_{
+    width: 100%;
+    height: 100%;
+    border-radius: 100% !important;
+    border: none;
     box-shadow: none !important;
     z-index: 99;
     font-weight: bold;
 }
 
-#notas_nps{
-    margin-top: 50px;
+#notas_five_{
+    margin-top: 5px;
 }
 
-.btn:hover{
+.btn_five_:hover{
     color: white !important;
     background-color: black !important;
 }
 
-#n_p_1{
+#f_p_1_{
     float: left;
-    font-size: 60%;
+    font-size: 70%;
 }
 
-#n_p_2{
+#f_p_2_{
     float: right;
-    font-size: 60%;
+    font-size: 70%; 
 }
 
-#n_0{
-    background-color: red;
+#f_1_{
+    background-color: rgb(255, 0, 0);
     color: black;
 }
-#n_1{
-    background-color: rgb(255, 90, 0);
+#f_2_{
+    background-color: rgb(255, 115, 0);
     color: black;
 }
-#n_2{
-    background-color: rgb(255, 120, 0);
+#f_3_{
+    background-color: rgb(255, 230, 0);
     color: black;
 }
-#n_3{
-    background-color: rgb(255, 150, 0);
+#f_4_{
+    background-color: rgb(150, 200, 0);
     color: black;
 }
-#n_4{
-    background-color: rgb(255, 200, 0);
-    color: black;
-}
-#n_5{
-    background-color: rgb(255, 255, 0);
-    color: black;
-}
-#n_6{
-    background-color: rgb(233, 255, 40);
-    color: black;
-}
-#n_7{
-    background-color: rgb(214, 255, 65);
-    color: black;
-}
-#n_8{
-    background-color: rgb(200, 255, 34);
-    color: black;
-}
-#n_9{
-    background-color: rgb(150, 255, 0);
-    color: black;
-}
-#n_10{
+#f_5_{
     background-color: rgb(0, 255, 0);
     color: black;
 }
