@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet"
+        href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/node-waves/waves.css">
+    <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/css/style.min.css">
+    <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/css/main.css">
+    <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/datatables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="nvs.css">
+    <link rel="stylesheet" href="style.css">
+    <title>CSAT</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center mt-4">
+            <div class="card col-md-6">
+                <div class="align-center">
+                    <h1 id="csat_quest">**Como você classificaria a *nossa empresa* sobre o valor total que a empresa
+                        oferece,
+                        em comparação ao valor total oferecido por outros fornecedores de produtos / serviços
+                        similares?**</h1>
+                </div>
+                <div class="col-md-12">
+                    <div class="align-center" id="notas_nvs">
+                        <div class="d-flex justify-content-center">
+                            <div class="align_text_justfy">
+                                <input type="radio" id="i_0" value="0" name="i"><label for="0">significativamente
+                                    melhor</label><br>
+                                <input type="radio" id="i_1" value="1" name="i"><label for="1">Um pouco
+                                    melhor</label><br>
+                                <input type="radio" id="i_2" value="2" name="i"><label for="2">Nem melhor, nem
+                                    pior</label><br>
+                                <input type="radio" id="i_3" value="3" name="i"><label for="3">Um pouco pior</label><br>
+                                <input type="radio" id="i_4" value="4" name="i"><label for="4">significativamente
+                                    Pior</label><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var nota_nvs;
+    </script>
+
+    <script src="script.js"></script>
+
+    <!-- Jquery Core Js -->
+    <script src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Fusioncharts Js -->
+    <script src="https://siga.arcoconsultoria.com/SIGA/FC/fusioncharts.js"></script>
+    <script src="https://siga.arcoconsultoria.com/SIGA/FC/fusioncharts.charts.js"></script>
+    <script src="https://siga.arcoconsultoria.com/SIGA/FC/themes/fusioncharts.theme.fint.js"></script>
+
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/moment/moment.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/datatables.min.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/dt-moment.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/Buttons-1.6.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/Buttons-1.6.1/js/buttons.flash.min.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/jszip.min.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/pdfmake.min.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/vfs_fonts.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/Buttons-1.6.1/js/buttons.html5.min.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/Buttons-1.6.1/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://siga.arcoconsultoria.com/SIGA/libsiga/js/mainNoConflict.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+}
+
+i{
+    font-size: 40px;
+}
+
+#e_0{
+    color: rgb(0, 255, 0);
+}
+#e_1{
+    color: rgb(57, 127, 0);
+}
+#e_2{
+    color: rgb(117, 117, 117);
+}
+#e_3{
+    color: rgb(200, 100, 0);
+}
+#e_4{
+    color: rgb(255, 0, 0);
+}
+
+.emojis{
+    margin: 0 auto;
+}
+
+.btn_emoji span{
+    margin: 10px;
+    font-size: 150%;
+}
+
+.text_emoji_align l{
+    margin-left: 50px;
+}
+
+.btn_emoji{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    box-shadow: none;
+    text-align: justify;
+    padding-left: 5%;
+    align-items: center;
+}
+
+.btn_emoji:hover{
+    background-color: rgba(163, 255, 255, 0.274) !important;
+    border-radius: 50px;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet"
+        href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/node-waves/waves.css">
+    <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/css/style.min.css">
+    <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/css/main.css">
+    <link rel="stylesheet" href="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/datatables.min.css">
+    <link rel="stylesheet" href="form-editor.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container col-md-12">
+        <div class="card col-md-9 justify-content-center">
+            <div class="">
+                <div class="w-100">
+                    <h1>**Nome da Empresa**</h1>
+                </div>
+                <div class="row" id="q_1">
+                    <!-- Template -->
+
+                </div>
+                <div class="row" id="q_2">
+                    <!-- Template -->
+
+                </div>
+                <div class="row" id="q_3">
+                    <!-- Template -->
+
+                </div>
+                <div class="row" id="q_4">
+                    <!-- Template -->
+
+                </div>
+                <div class="row" id="q_5">
+                    <!-- Template -->
+
+                </div>
+                <div class="row" id="q_6">
+                    <!-- Template -->
+
+                </div>
+                <div class="row" id="q_7">
+                    <!-- Template -->
+
+                </div>
+                <div class="row" id="q_8">
+                    <!-- Template -->
+
+                </div>
+                <div class="row" id="q_9">
+                    <!-- Template -->
+
+                </div>
+                <div class="row" id="q_10">
+                    <!-- Template -->
+
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-3 navbar-right ">
+            
+                <div class="justify-content-center">
+                    <h2>Templates</h2>
+                </div>
+                <div class="justify-content-center">
+                    <div class="card col-md-12">
+                        <div class="align-center">
+                            <h6 id="text_quest">Nos de sua opnião sobre nosso atendimento</h6>
+                        </div>
+                        <div class="col-md-12 justify-content-center">
+                            <input type="text" id="text_input" class="m-b-10 w-100" placeholder="Digite Aqui!"
+                                style="font-size: 65%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="justfy-content-center">
+                    <div class="card col-md-12">
+                        <div class="">
+                            <div class="align-center">
+                                <h6 id="nps_quest">Numa escala de 0 a 10, quanto você indicaria a <span id="nome_emp">**Nossa
+                                        empresa**</span> a um amigo?</h6>
+                            </div>
+                            <div class="col-12">
+                                <div class="col-12 align-center" id="notas_nps">
+                                    <div class="nota"><button class="btn" id="n_0"
+                                            onclick="alter_color_black('n_0', 'n');">0</button></div>
+                                    <div class="nota"><button class="btn" id="n_1"
+                                            onclick="alter_color_black('n_1', 'n');">1</button></div>
+                                    <div class="nota"><button class="btn" id="n_2"
+                                            onclick="alter_color_black('n_2', 'n');">2</button></div>
+                                    <div class="nota"><button class="btn" id="n_3"
+                                            onclick="alter_color_black('n_3', 'n');">3</button></div>
+                                    <div class="nota"><button class="btn" id="n_4"
+                                            onclick="alter_color_black('n_4', 'n');">4</button></div>
+                                    <div class="nota"><button class="btn" id="n_5"
+                                            onclick="alter_color_black('n_5', 'n');">5</button></div>
+                                    <div class="nota"><button class="btn" id="n_6"
+                                            onclick="alter_color_black('n_6', 'n');">6</button></div>
+                                    <div class="nota"><button class="btn" id="n_7"
+                                            onclick="alter_color_black('n_7', 'n');">7</button></div>
+                                    <div class="nota"><button class="btn" id="n_8"
+                                            onclick="alter_color_black('n_8', 'n');">8</button></div>
+                                    <div class="nota"><button class="btn" id="n_9"
+                                            onclick="alter_color_black('n_9', 'n');">9</button></div>
+                                    <div class="nota"><button class="btn" id="n_10"
+                                            onclick=" alter_color_black('n_10', 'n');">10</button></div>
+                                    <div class="">
+                                        <span id="n_p_1"><b>NÂO INDICARIA</b></span>
+                                        <span id="n_p_2"><b>INDICARIA</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <!-- Jquery Core Js -->
+    <script src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Fusioncharts Js -->
+    <script src="https://siga.arcoconsultoria.com/SIGA/FC/fusioncharts.js"></script>
+    <script src="https://siga.arcoconsultoria.com/SIGA/FC/fusioncharts.charts.js"></script>
+    <script src="https://siga.arcoconsultoria.com/SIGA/FC/themes/fusioncharts.theme.fint.js"></script>
+
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/moment/moment.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/datatables.min.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/dt-moment.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/Buttons-1.6.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/Buttons-1.6.1/js/buttons.flash.min.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/jszip.min.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/pdfmake.min.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/vfs_fonts.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/Buttons-1.6.1/js/buttons.html5.min.js"></script>
+    <script type="text/javascript"
+        src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/datatables/Buttons-1.6.1/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://siga.arcoconsultoria.com/SIGA/libsiga/js/mainNoConflict.js"></script>
+</body>
+
+</html>

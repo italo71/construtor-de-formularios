@@ -1,0 +1,9 @@
+.black{
+    color: white !important;
+    background-color: black !important;
+}
+
+.gray{
+    background-color: rgba(0, 225, 255, 0.192);
+    border-radius: 50px;
+}
