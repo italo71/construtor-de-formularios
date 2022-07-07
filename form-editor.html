@@ -21,6 +21,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="form-editor.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
@@ -28,48 +29,131 @@
     <div class="container col-md-12">
         <div class="card col-md-8 justify-content-center">
             <div class="">
-                <div class="w-100">
-                    <h1>**Nome da Empresa**</h1>
+                <div class="container col-md-12">
+                    <div class="row col-md-12 justify-content-center w-100">
+                        <h1>Pesquisa ISA</h1>
+                    </div>
+                    <div class="row col-md-12 justify-content-center w-100">
+                        <h4>Personalize aqui sua pesquisa</h4>
+                    </div>
                 </div>
-                <div class="row" id="q_1">
+                <div class="justify-content-center m-l-30 col-md-11 question_box" id="q_1">
+                    <!-- Template -->
+                    
+
+                </div>
+                <div class="row">
+                    <button class="menos" id="btn_r_1" onclick="btn_remove_display(false, 1);">
+                        <span class="material-symbols-outlined">
+                            remove
+                        </span>
+                    </button>
+                </div>
+                <div class="justify-content-center m-l-30 col-md-11 question_box" id="q_2">
                     <!-- Template -->
 
                 </div>
-                <div class="row" id="q_2">
+                <div class="row">
+                    <button class="menos" id="btn_r_2" onclick="btn_remove_display(false, 2);"> 
+                        <span class="material-symbols-outlined">
+                            remove
+                        </span>
+                    </button>
+                </div>
+                <div class="justify-content-center m-l-30 col-md-11 question_box" id="q_3">
                     <!-- Template -->
 
                 </div>
-                <div class="row" id="q_3">
+                <div class="row">
+                    <button class="menos" id="btn_r_3" onclick="btn_remove_display(false, 3);"> 
+                        <span class="material-symbols-outlined">
+                            remove
+                        </span>
+                    </button>
+                </div>
+
+                <div class="justify-content-center m-l-30 col-md-11 question_box" id="q_4">
                     <!-- Template -->
 
                 </div>
-                <div class="row" id="q_4">
+                <div class="row">
+                    <button class="menos" id="btn_r_4" onclick="btn_remove_display(false, 4);"> 
+                        <span class="material-symbols-outlined">
+                            remove
+                        </span>
+                    </button>
+                </div>
+
+                <div class="justify-content-center m-l-30 col-md-11 question_box" id="q_5">
                     <!-- Template -->
 
                 </div>
-                <div class="row" id="q_5">
+                <div class="row">
+                    <button class="menos" id="btn_r_5" onclick="btn_remove_display(false, 5);"> 
+                        <span class="material-symbols-outlined">
+                            remove
+                        </span>
+                    </button>
+                </div>
+
+                <div class="justify-content-center m-l-30 col-md-11 question_box" id="q_6">
                     <!-- Template -->
 
                 </div>
-                <div class="row" id="q_6">
+                <div class="row">
+                    <button class="menos" id="btn_r_6" onclick="btn_remove_display(false, 6);"> 
+                        <span class="material-symbols-outlined">
+                            remove
+                        </span>
+                    </button>
+                </div>
+
+                <div class="justify-content-center m-l-30 col-md-11 question_box" id="q_7">
                     <!-- Template -->
 
                 </div>
-                <div class="row" id="q_7">
+                <div class="row">
+                    <button class="menos" id="btn_r_7" onclick="btn_remove_display(false, 7);"> 
+                        <span class="material-symbols-outlined">
+                            remove
+                        </span>
+                    </button>
+                </div>
+
+                <div class="justify-content-center m-l-30 col-md-11 question_box" id="q_8">
                     <!-- Template -->
 
                 </div>
-                <div class="row" id="q_8">
+                <div class="row">
+                    <button class="menos" id="btn_r_8" onclick="btn_remove_display(false, 8);"> 
+                        <span class="material-symbols-outlined">
+                            remove
+                        </span>
+                    </button>
+                </div>
+
+                <div class="justify-content-center m-l-30 col-md-11 question_box" id="q_9">
                     <!-- Template -->
 
                 </div>
-                <div class="row" id="q_9">
+                <div class="row">
+                    <button class="menos" id="btn_r_9" onclick="btn_remove_display(false, 9);"> 
+                        <span class="material-symbols-outlined">
+                            remove
+                        </span>
+                    </button>
+                </div>
+
+                <div class="justify-content-center m-l-30 col-md-11 question_box" id="q_10">
                     <!-- Template -->
 
                 </div>
-                <div class="row" id="q_10">
-                    <!-- Template -->
-
+                <div class="row">
+                    <button class="menos" id="btn_r_10 onclick=" onclick="btn_remove_display(false, 10);">
+                        <span class="material-symbols-outlined">
+                            remove
+                        </span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -78,80 +162,93 @@
             <div class="justify-content-center">
                 <h2>Templates</h2>
             </div>
-            <div class="justify-content-center">
-                <div class="card col-md-12">
+            <div class="justify-content-center min_height">
+                <div class="card col-md-11">
                     <div class="align-center">
                         <h6 id="text_quest">Nos de sua opnião sobre nosso atendimento</h6>
                     </div>
                     <div class="col-md-12 justify-content-center">
-                        <input type="text" id="text_input" class="m-b-10 w-100" placeholder="Digite Aqui!"
+                        <input type="text" id="text_input" class="m-b-10 w-100 form-control" placeholder="Digite Aqui!"
                             style="font-size: 65%;">
                     </div>
                 </div>
-                <div>
-                    <button class="btn btn-success mais">
+                <div class="btns col-md-1">
+                    <button class="btn mais" id="mais_1" onclick="adicionarPergunta(text);">
                         <span class="material-symbols-outlined">
                             add
-                        </span>
-                    </button>
-                    <button class="btn btn-danger menos">
-                        <span class="material-symbols-outlined">
-                            remove
                         </span>
                     </button>
                 </div>
             </div>
             <div class="justify-content-center">
-                <div class="card col-md-12">
+                <div class="card col-md-11">
                     <div class="">
                         <div class="align-center">
                             <h6 id="nps_quest">Numa escala de 0 a 10, quanto você indicaria a <span
                                     id="nome_emp">**Nossa
                                     empresa**</span> a um amigo?</h6>
                         </div>
-                        <div class="w-100" id="notas_nps">
-                            <div class="nota_"><button class="btn_" id="n_0_">0</button></div>
-                            <div class="nota_"><button class="btn_" id="n_1_">1</button></div>
-                            <div class="nota_"><button class="btn_" id="n_2_">2</button></div>
-                            <div class="nota_"><button class="btn_" id="n_3_">3</button></div>
-                            <div class="nota_"><button class="btn_" id="n_4_">4</button></div>
-                            <div class="nota_"><button class="btn_" id="n_5_">5</button></div>
-                            <div class="nota_"><button class="btn_" id="n_6_">6</button></div>
-                            <div class="nota_"><button class="btn_" id="n_7_">7</button></div>
-                            <div class="nota_"><button class="btn_" id="n_8_">8</button></div>
-                            <div class="nota_"><button class="btn_" id="n_9_">9</button></div>
-                            <div class="nota_"><button class="btn_" id="n_10_">10</button></div>
-                            <div class="">
+                        <div class="col-md-12" id="notas_nps_">
+                            <div class="m-l-20 justify-content-center">
+                                <div class="nota_"><button class="btn_" id="n_0_">0</button></div>
+                                <div class="nota_"><button class="btn_" id="n_1_">1</button></div>
+                                <div class="nota_"><button class="btn_" id="n_2_">2</button></div>
+                                <div class="nota_"><button class="btn_" id="n_3_">3</button></div>
+                                <div class="nota_"><button class="btn_" id="n_4_">4</button></div>
+                                <div class="nota_"><button class="btn_" id="n_5_">5</button></div>
+                                <div class="nota_"><button class="btn_" id="n_6_">6</button></div>
+                                <div class="nota_"><button class="btn_" id="n_7_">7</button></div>
+                                <div class="nota_"><button class="btn_" id="n_8_">8</button></div>
+                                <div class="nota_"><button class="btn_" id="n_9_">9</button></div>
+                                <div class="nota_"><button class="btn_" id="n_10_">10</button></div>
+                            </div>
+                            <div>
                                 <span id="n_p_1_"><b>NÂO INDICARIA</b></span>
                                 <span id="n_p_2_"><b>INDICARIA</b></span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="btns col-md-1">
+                    <button class="btn mais" id="mais_2" onclick="adicionarPergunta(ball10);">
+                        <span class="material-symbols-outlined">
+                            add
+                        </span>
+                    </button>
+                </div>
             </div>
             <div class="justify-content-center">
-                <div class="card col-12">
+                <div class="card col-11">
                     <div class="align-center col-md-12">
                         <h6 id="csat_quest">Qual a sua satisfação com o nosso atendimento?</h6>
                     </div>
                     <div class="col-md-12">
                         <div class="align-center" id="notas_csat">
-                            <div class="emojis col-md-12"><button class="btn_emoji_" id="e_0_"><i
-                                        class="bi bi-emoji-laughing"></i><span>Muito Satisfeito</span></button></div>
-                            <div class="emojis col-md-12"><button class="btn_emoji_" id="e_1_"><i
-                                        class="bi bi-emoji-smile"></i><span>Satisfeito</span></button></div>
-                            <div class="emojis col-md-12"><button class="btn_emoji_" id="e_2_"><i
-                                        class="bi bi-emoji-neutral"></i><span>Indiferente</span></button></div>
-                            <div class="emojis col-md-12"><button class="btn_emoji_" id="e_3_"><i
-                                        class="bi bi-emoji-frown"></i><span>Insatifeito</span></button></div>
-                            <div class="emojis col-md-12"><button class="btn_emoji_" id="e_4_"><i
-                                        class="bi bi-emoji-angry"></i><span>Muito Insatifeito</span></button></div>
+                            <div class="emojis_ col-md-12"><button class="btn_emoji_" id="e_0_"><i
+                                        class="iEmoji_ bi bi-emoji-laughing"></i><span>Muito Satisfeito</span></button>
+                            </div>
+                            <div class="emojis_ col-md-12"><button class="btn_emoji_" id="e_1_"><i
+                                        class="iEmoji_ bi bi-emoji-smile"></i><span>Satisfeito</span></button></div>
+                            <div class="emojis_ col-md-12"><button class="btn_emoji_" id="e_2_"><i
+                                        class="iEmoji_ bi bi-emoji-neutral"></i><span>Indiferente</span></button></div>
+                            <div class="emojis_ col-md-12"><button class="btn_emoji_" id="e_3_"><i
+                                        class="iEmoji_ bi bi-emoji-frown"></i><span>Insatifeito</span></button></div>
+                            <div class="emojis_ col-md-12"><button class="btn_emoji_" id="e_4_"><i
+                                        class="iEmoji_ bi bi-emoji-angry"></i><span>Muito Insatifeito</span></button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="btns col-md-1">
+                    <button class="btn mais" id="mais_3" onclick="adicionarPergunta(emoji5);">
+                        <span class="material-symbols-outlined">
+                            add
+                        </span>
+                    </button>
+                </div>
             </div>
             <div class="justify-content-center">
-                <div class="card col-md-12">
+                <div class="card col-md-11">
                     <div class="align-center">
                         <h6 id="csat_quest">**Como você classificaria a *nossa empresa* sobre o valor total que a
                             empresa
@@ -183,9 +280,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="btns col-md-1">
+                    <button class="btn mais" id="mais_4" onclick="adicionarPergunta(radio5);">
+                        <span class="material-symbols-outlined">
+                            add
+                        </span>
+                    </button>
+                </div>
             </div>
             <div class="justify-content-center">
-                <div class="card col-md-12 align-items-center">
+                <div class="card col-md-11 align-items-center">
                     <div class="align-center">
                         <h6 id="double_quest">Vistoria foi aprovada</h6>
                     </div>
@@ -196,9 +300,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="btns col-md-1">
+                    <button class="btn mais" id="mais_5" onclick="adicionarPergunta(radio2);">
+                        <span class="material-symbols-outlined">
+                            add
+                        </span>
+                    </button>
+                </div>
             </div>
             <div class="justify-content-center">
-                <div class="card col-md-12 align-items-center">
+                <div class="card col-md-11 align-items-center">
                     <div class="align-center">
                         <h6 id="fiveB_quest">Avalie nossos serviço de 1 a 5</h6>
                     </div>
@@ -220,11 +331,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="btns col-md-1">
+                    <button class="btn mais" id="mais_6" onclick="adicionarPergunta(ball5);">
+                        <span class="material-symbols-outlined">
+                            add
+                        </span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
-
+    <script src="script.js"></script>
 
     <!-- Jquery Core Js -->
     <script src="https://siga.arcoconsultoria.com/SIGA/libsiga/plugins/jquery/jquery.min.js"></script>

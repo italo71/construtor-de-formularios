@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
 }
 
 /*  */
 
-.nota_{
+.nota_ {
     width: 5px;
     height: 5px;
     border-radius: 100%;
@@ -14,19 +14,19 @@
     margin-right: 15px;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-.inp_nota_{
+.inp_nota_ {
     display: none;
 }
 
-.nota_{
+.nota_ {
     margin-right: 16px;
 }
 
-.nota_ .btn_{
+.nota_ .btn_ {
 
     border-radius: 100% !important;
     box-shadow: none !important;
@@ -37,111 +37,140 @@ ul{
     align-content: space-between;
 }
 
-.btn_{
+.btn_ {
     width: 23px;
     height: 23px;
     padding: 0 !important;
 }
 
-#notas_nps_{
-    margin-top: 0px;
+#notas_nps_ {
+    margin: 0 auto;
 }
 
-.btn_:hover{
+.btn_:hover {
     color: white !important;
     background-color: black !important;
 }
 
-#n_p_1_{
+#n_p_1_ {
     float: left;
     font-size: 8px;
 }
 
-#n_p_2_{
+#n_p_2_ {
     float: right;
     font-size: 8px;
 }
 
-#n_0_{
+#n_0_ {
     background-color: red;
     color: black;
 }
-#n_1_{
+
+#n_1_ {
     background-color: rgb(255, 90, 0);
     color: black;
 }
-#n_2_{
+
+#n_2_ {
     background-color: rgb(255, 120, 0);
     color: black;
 }
-#n_3_{
+
+#n_3_ {
     background-color: rgb(255, 150, 0);
     color: black;
 }
-#n_4_{
+
+#n_4_ {
     background-color: rgb(255, 200, 0);
     color: black;
 }
-#n_5_{
+
+#n_5_ {
     background-color: rgb(255, 255, 0);
     color: black;
 }
-#n_6_{
+
+#n_6_ {
     background-color: rgb(233, 255, 40);
     color: black;
 }
-#n_7_{
+
+#n_7_ {
     background-color: rgb(214, 255, 65);
     color: black;
 }
-#n_8_{
+
+#n_8_ {
     background-color: rgb(200, 255, 34);
     color: black;
 }
-#n_9_{
+
+#n_9_ {
     background-color: rgb(150, 255, 0);
     color: black;
 }
-#n_10_{
+
+#n_10_ {
     background-color: rgb(0, 255, 0);
     color: black;
 }
 
 /* CSAT */
 
-i{
-    font-size: 20px;
+.iEmoji_ {
+    font-size: 20px !important;
 }
 
-#e_0_{
-    color: rgb(0, 255, 0);
-}
-#e_1_{
-    color: rgb(57, 127, 0);
-}
-#e_2_{
-    color: rgb(117, 117, 117);
-}
-#e_3_{
-    color: rgb(200, 100, 0);
-}
-#e_4_{
-    color: rgb(255, 0, 0);
+.iEmoji {
+    font-size: 30px !important;
 }
 
-.emojis_{
+.emojis {
     margin: 0 auto;
     text-align: left;
 }
 
-.btn_emoji_ span{
+.btn_emoji span {
+    text-align: center;
+    margin: 1px 1px 1px 5px;
+    font-size: 100%;
+}
+
+#e_0_ {
+    color: rgb(0, 255, 0);
+}
+
+#e_1_ {
+    color: rgb(57, 127, 0);
+}
+
+#e_2_ {
+    color: rgb(117, 117, 117);
+}
+
+#e_3_ {
+    color: rgb(200, 100, 0);
+}
+
+#e_4_ {
+    color: rgb(255, 0, 0);
+}
+
+.emojis_ {
+    margin: 0 auto;
+    text-align: left;
+}
+
+.btn_emoji_ span {
     text-align: center;
     margin: 1px 1px 1px 5px;
     font-size: 100%;
 }
 
 
-.btn_emoji_{
+.btn_emoji_ {
     background-color: rgba(0, 0, 0, 0);
     border: none;
     box-shadow: none;
@@ -149,27 +178,28 @@ i{
     align-items: center;
 }
 
-.btn_emoji_:hover{
+.btn_emoji_:hover {
     background-color: rgba(163, 255, 255, 0.274) !important;
     border-radius: 50px;
 }
 
 /* NVS */
 
-.input_range_{
+.input_range_ {
     display: inline-block;
 }
 
-.drop_{
+.drop_ {
     display: block;
 }
-.drop_ input{
+
+.drop_ input {
     float: left;
 }
 
 /* fiveB */
 
-.nota_five_{
+.nota_five_ {
     width: 30px;
     height: 30px;
     border-radius: 30px;
@@ -179,11 +209,11 @@ i{
 }
 
 
-.inp_nota_{
+.inp_nota_ {
     display: none;
 }
 
-.nota_five_ .btn_five_{
+.nota_five_ .btn_five_ {
     width: 100%;
     height: 100%;
     border-radius: 100% !important;
@@ -193,42 +223,90 @@ i{
     font-weight: bold;
 }
 
-#notas_five_{
+#notas_five_ {
     margin-top: 5px;
 }
 
-.btn_five_:hover{
+.btn_five_:hover {
     color: white !important;
     background-color: black !important;
 }
 
-#f_p_1_{
+#f_p_1_ {
     float: left;
     font-size: 70%;
 }
 
-#f_p_2_{
+#f_p_2_ {
     float: right;
-    font-size: 70%; 
+    font-size: 70%;
 }
 
-#f_1_{
+#f_1_ {
     background-color: rgb(255, 0, 0);
     color: black;
 }
-#f_2_{
+
+#f_2_ {
     background-color: rgb(255, 115, 0);
     color: black;
 }
-#f_3_{
+
+#f_3_ {
     background-color: rgb(255, 230, 0);
     color: black;
 }
-#f_4_{
+
+#f_4_ {
     background-color: rgb(150, 200, 0);
     color: black;
 }
-#f_5_{
+
+#f_5_ {
     background-color: rgb(0, 255, 0);
     color: black;
 }
+
+/* outros */
+
+.btns {
+    margin: 8px 5px 0 0;
+}
+
+
+.mais span {
+    font-size: 20px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.menos span {
+    font-size: 20px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.mais, .menos {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    padding-top: 6px;
+}
+
+.mais {
+    background-color: rgb(0, 255, 0);
+}
+
+.menos {
+    background-color: red;
+    display: none;
+    border: none;
+}
+
+.question_box{
+    display: flex;
+    flex-grow: 1;
+    flex-basis: auto;
+    table-layout:fixed;
+}
+

@@ -1,61 +1,19 @@
-function alter_color_black(id, l) {
-    for (let i = 0; i <= 10; i++) {
-        document.getElementById(`${l}_${i}`).classList.remove('black');
-    }
-    document.getElementById(`${id}`).classList.add('black');
-}
-
-function alter_color_gray(id) {
-    for (let i = 0; i <= 4; i++)
-        document.getElementById(`e_${i}`).classList.remove('gray');
-    document.getElementById(`${id}`).classList.add('gray');
-}
-
-function adicionarPergunta(tipo) {
-    var finded = false;
-    var local;
-    for (let i = 1; i <= 10; i++) {
-        if (document.querySelectorAll(`#q_${i} .card`).length == 0 && finded == false) {
-            local = i;
-            finded = true;
-        }
-    }
-    if (local != undefined) {
-        document.getElementById(`q_${local}`).innerHTML = `${tipo}`;
-        btn_remove_display(true, local)
-    }
-    else {
-        alert('Limite de 10 perguntas atingido!');
-    }
-}
-
-function btn_remove_display(d, id){
-    if(d){
-        document.getElementById(`btn_r_${id}`).style.display = 'block';
-    }
-    else{
-        document.getElementById(`btn_r_${id}`).style.display = 'none';
-        document.getElementById(`q_${id}`).innerHTML = "";
-    }
-}
-
-/* Declarações */
-
-var text = `<div class="card col-md-11">
+var text = `<div class="card col-md-6">
 <div class="align-center">
-    <h3 id="text_quest">Nos de sua opnião sobre nosso atendimento</h3>
+    <h1 id="text_quest">Nos de sua opnião sobre nosso atendimento</h1>
 </div>
 <div class="col-md-12">
-    <input type="text" id="text_input" class="m-b-10 form-control" placeholder="Digite Aqui!">
+    <input type="text" id="text_input" class="m-b-10 w-100" placeholder="Digite Aqui!">
     </div>
+</div>
 </div>`;
 
-var ball10 = `<div class="card col-md-11 align-items-center">
+var ball10 = `<div class="card col-md-6 align-items-center">
 <div class="align-center">
-    <h3 id="nps_quest">Numa escala de 0 a 10, quanto você indicaria a <span id="nome_emp">**Nossa
-            empresa**</span> a um amigo?</h3>
+    <h1 id="nps_quest">Numa escala de 0 a 10, quanto você indicaria a <span id="nome_emp">**Nossa
+            empresa**</span> a um amigo?</h1>
 </div>
-<div class="col-md-11">
+<div class="col-md-12">
     <div class="align-center" id="notas_nps">
         <div class="nota"><button class="btn" id="n_0"
                 onclick="nota_nps = 0; alter_color_black('n_0', 'n');">0</button></div>
@@ -87,11 +45,11 @@ var ball10 = `<div class="card col-md-11 align-items-center">
 </div>
 </div>`;
 
-var ball5 = `<div class="card col-md-11 align-items-center">
+var ball5 = `<div class="card col-md-6 align-items-center">
 <div class="align-center">
-    <h3 id="fiveB_quest">Avalie nossos serviço de 1 a 5</h3>
+    <h1 id="fiveB_quest">Avalie nossos serviço de 1 a 5</h1>
 </div>
-<div class="col-md-11">
+<div class="col-md-12">
     <div class="align-center" id="notas_five">
         <div class="align-center" id="notas_five">
             <div class="nota_five"><button class="btn_five" id="f_1"
@@ -115,12 +73,12 @@ var ball5 = `<div class="card col-md-11 align-items-center">
 </div>
 </div>`;
 
-var radio5 = `<div class="card col-md-11 align-itens-center">
+var radio4 = `<div class="card col-md-6">
 <div class="align-center">
-    <h3 id="csat_quest">**Como você classificaria a *nossa empresa* sobre o valor total que a empresa
+    <h1 id="csat_quest">**Como você classificaria a *nossa empresa* sobre o valor total que a empresa
         oferece,
         em comparação ao valor total oferecido por outros fornecedores de produtos / serviços
-        similares?**</h3>
+        similares?**</h1>
 </div>
 <div class="col-md-12">
     <div class="align-center" id="notas_nvs">
@@ -141,9 +99,9 @@ var radio5 = `<div class="card col-md-11 align-itens-center">
 </div>
 </div>`;
 
-var radio2 = `<div class="card col-md-11 align-items-center">
+var radio2 = `<div class="card col-md-6 align-items-center">
 <div class="align-center">
-    <h3 id="double_quest">Vistoria foi aprovada</h3>
+    <h1 id="double_quest">Vistoria foi aprovada</h1>
 </div>
 <div class="justify-content-center">
     <div class="col-md-12">
@@ -153,27 +111,27 @@ var radio2 = `<div class="card col-md-11 align-items-center">
 </div>
 </div>`;
 
-var emoji5 = `<div class="card col-md-11 align-itens-center">
+var emoji5 = `<div class="card col-md-6">
 <div class="align-center">
-    <h3 id="csat_quest">Qual a sua satisfação com o nosso atendimento?</h3>
+    <h1 id="csat_quest">Qual a sua satisfação com o nosso atendimento?</h1>
 </div>
 <div class="col-md-12">
     <div class="align-center" id="notas_csat">
         <div class="emojis col-12"><button class="btn_emoji w-50"
                 onclick="nota_csat = 0; alter_color_gray('e_0');" id="e_0"><i
-                    class="iEmoji bi bi-emoji-laughing"></i><span>Muito Satisfeito</span></button></div>
+                    class="bi bi-emoji-laughing"></i><span>Muito Satisfeito</span></button></div>
         <div class="emojis col-12"><button class="btn_emoji w-50"
                 onclick="nota_csat = 1; alter_color_gray('e_1');" id="e_1"><i
-                    class="iEmoji bi bi-emoji-smile"></i><span>Satisfeito</span></button></div>
+                    class="bi bi-emoji-smile"></i><span>Satisfeito</span></button></div>
         <div class="emojis col-12"><button class="btn_emoji w-50"
                 onclick="nota_csat = 2; alter_color_gray('e_2');" id="e_2"><i
-                    class="iEmoji bi bi-emoji-neutral"></i><span>Indiferente</span></button></div>
+                    class="bi bi-emoji-neutral"></i><span>Indiferente</span></button></div>
         <div class="emojis col-12"><button class="btn_emoji w-50"
                 onclick="nota_csat = 3; alter_color_gray('e_3');" id="e_3"><i
-                    class="iEmoji bi bi-emoji-frown"></i><span>Insatifeito</span></button></div>
+                    class="bi bi-emoji-frown"></i><span>Insatifeito</span></button></div>
         <div class="emojis col-12"><button class="btn_emoji w-50"
                 onclick="nota_csat = 4; alter_color_gray('e_4');" id="e_4"><i
-                    class="iEmoji bi bi-emoji-angry"></i><span>Muito Insatifeito</span></button></div>
+                    class="bi bi-emoji-angry"></i><span>Muito Insatifeito</span></button></div>
     </div>
 </div>
 </div>`;
