@@ -30,12 +30,12 @@ function adicionarPergunta(tipo) {
     }
 }
 
-function btn_remove_display(d, id){
-    if(d){
+function btn_remove_display(d, id) {
+    if (d) {
         document.getElementById(`btn_r_${id}`).style.display = 'block';
         document.getElementById(`btn_e_${id}`).style.display = 'block';
     }
-    else{
+    else {
         document.getElementById(`btn_r_${id}`).style.display = 'none';
         document.getElementById(`btn_e_${id}`).style.display = 'none';
         document.getElementById(`q_${id}`).innerHTML = "";
@@ -43,27 +43,57 @@ function btn_remove_display(d, id){
     }
 }
 
-function btn_salvar_display (){
+function btn_salvar_display() {
     let tem_card = true;
     for (let i = 1; i <= 10; i++) {
         if (document.querySelectorAll('.question_box .card').length == 0) {
             tem_card = false;
         }
     }
-    if(!(tem_card)){
+    if (!(tem_card)) {
         document.getElementById('btn_salva_info').style.display = 'none';
     }
 }
 
-function editar_pergunta(id){
-    
+function editar_pergunta(id) {
+    let edit_pergunta;
+    if (document.querySelector(`#q_${id} .card .align-center div.m-t-5`) == undefined) {
+        edit_pergunta = document.querySelector(`#q_${id} .pergunta_editavel`).textContent;
+        document.querySelector(`#q_${id} .align-center`).innerHTML = input_editar_pergunta;
+        document.getElementById('pergunta_editada').value = edit_pergunta;
+        document.getElementById(`btn_e_${id}`).innerHTML = span_check;
+        document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(0, 202, 0)';
+        console.log(edit_pergunta);
+    }
+    else {
+        edit_pergunta = document.querySelector(`#q_${id} .card .align-center .justify-content-center input#pergunta_editada`).value;
+        document.getElementById(`btn_e_${id}`).innerHTML = span_edit;
+        document.querySelector(`#q_${id} .card .align-center`).innerHTML = h3_pergunta;
+        document.querySelector(`#q_${id} .card .align-center h3.pergunta_editavel`).textContent = edit_pergunta;
+        console.log(edit_pergunta);
+    }
 }
 
 /* Declarações */
 
+var input_editar_pergunta = `<div class="justify-content-center m-t-5 m-b-5">
+<input type="text" name="" id="pergunta_editada" class="form-control">
+</div>`
+
+var span_check = `<span class="material-symbols-outlined">
+check
+</span>`;
+
+var span_edit = `<span
+class="material-symbols-outlined">
+edit
+</span>`;
+
+var h3_pergunta = `<h3 class="pergunta_editavel" id="text_quest"></h3>`;
+
 var text = `<div class="card col-md-11">
 <div class="align-center">
-    <h3 id="text_quest">Nos de sua opnião sobre nosso atendimento</h3>
+    <h3 class="pergunta_editavel" id="text_quest">Nos de sua opnião sobre nosso atendimento</h3>
 </div>
 <div class="col-md-12">
     <input type="text" id="text_input" class="m-b-10 form-control" placeholder="Digite Aqui!">
@@ -72,7 +102,7 @@ var text = `<div class="card col-md-11">
 
 var ball10 = `<div class="card col-md-11 align-items-center">
 <div class="align-center">
-    <h3 id="nps_quest">Numa escala de 0 a 10, quanto você indicaria a <span id="nome_emp">**Nossa
+    <h3 class="pergunta_editavel" id="nps_quest">Numa escala de 0 a 10, quanto você indicaria a <span id="nome_emp">**Nossa
             empresa**</span> a um amigo?</h3>
 </div>
 <div class="col-md-11">
@@ -109,7 +139,7 @@ var ball10 = `<div class="card col-md-11 align-items-center">
 
 var ball5 = `<div class="card col-md-11 align-items-center">
 <div class="align-center">
-    <h3 id="fiveB_quest">Avalie nossos serviço de 1 a 5</h3>
+    <h3 class="pergunta_editavel" id="fiveB_quest">Avalie nossos serviço de 1 a 5</h3>
 </div>
 <div class="col-md-11">
     <div class="align-center" id="notas_five">
@@ -137,7 +167,7 @@ var ball5 = `<div class="card col-md-11 align-items-center">
 
 var radio5 = `<div class="card col-md-11 align-itens-center">
 <div class="align-center">
-    <h3 id="csat_quest">**Como você classificaria a *nossa empresa* sobre o valor total que a empresa
+    <h3 class="pergunta_editavel" id="csat_quest">**Como você classificaria a *nossa empresa* sobre o valor total que a empresa
         oferece,
         em comparação ao valor total oferecido por outros fornecedores de produtos / serviços
         similares?**</h3>
@@ -163,7 +193,7 @@ var radio5 = `<div class="card col-md-11 align-itens-center">
 
 var radio2 = `<div class="card col-md-11 align-items-center">
 <div class="align-center">
-    <h3 id="double_quest">Vistoria foi aprovada</h3>
+    <h3 class="pergunta_editavel" id="double_quest">Vistoria foi aprovada</h3>
 </div>
 <div class="justify-content-center">
     <div class="col-md-12">
@@ -175,7 +205,7 @@ var radio2 = `<div class="card col-md-11 align-items-center">
 
 var emoji5 = `<div class="card col-md-11 align-itens-center">
 <div class="align-center">
-    <h3 id="csat_quest">Qual a sua satisfação com o nosso atendimento?</h3>
+    <h3 class="pergunta_editavel" id="csat_quest">Qual a sua satisfação com o nosso atendimento?</h3>
 </div>
 <div class="col-md-12">
     <div class="align-center" id="notas_csat">
@@ -197,3 +227,4 @@ var emoji5 = `<div class="card col-md-11 align-itens-center">
     </div>
 </div>
 </div>`;
+
