@@ -310,3 +310,22 @@ ul {
     table-layout:fixed;
 }
 
+.btn_save{
+    float: right;
+    display: none;
+    margin: 0 10px 10px 0;
+    background-color: rgb(0, 173, 0);
+    border: none;
+}
+
+.editar{
+    background-color: rgb(79, 185, 255);
+    border: none;
+    padding: 5px 5px 1px 5px;
+    margin-top: 3px;
+    float: left;
+    display: none;
+}
+.editar span{
+    font-size: 20px;
+}

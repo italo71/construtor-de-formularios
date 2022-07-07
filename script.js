@@ -12,8 +12,8 @@ function alter_color_gray(id) {
 }
 
 function adicionarPergunta(tipo) {
-    var finded = false;
-    var local;
+    let finded = false;
+    let local;
     for (let i = 1; i <= 10; i++) {
         if (document.querySelectorAll(`#q_${i} .card`).length == 0 && finded == false) {
             local = i;
@@ -22,6 +22,7 @@ function adicionarPergunta(tipo) {
     }
     if (local != undefined) {
         document.getElementById(`q_${local}`).innerHTML = `${tipo}`;
+        document.getElementById('btn_salva_info').style.display = 'block';
         btn_remove_display(true, local)
     }
     else {
@@ -32,11 +33,30 @@ function adicionarPergunta(tipo) {
 function btn_remove_display(d, id){
     if(d){
         document.getElementById(`btn_r_${id}`).style.display = 'block';
+        document.getElementById(`btn_e_${id}`).style.display = 'block';
     }
     else{
         document.getElementById(`btn_r_${id}`).style.display = 'none';
+        document.getElementById(`btn_e_${id}`).style.display = 'none';
         document.getElementById(`q_${id}`).innerHTML = "";
+        btn_salvar_display();
     }
+}
+
+function btn_salvar_display (){
+    let tem_card = true;
+    for (let i = 1; i <= 10; i++) {
+        if (document.querySelectorAll('.question_box .card').length == 0) {
+            tem_card = false;
+        }
+    }
+    if(!(tem_card)){
+        document.getElementById('btn_salva_info').style.display = 'none';
+    }
+}
+
+function editar_pergunta(id){
+    
 }
 
 /* Declarações */
