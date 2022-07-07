@@ -1,13 +1,21 @@
-function alter_color_black(id, l) {
-    for (let i = 0; i <= 10; i++) {
-        document.getElementById(`${l}_${i}`).classList.remove('black');
+function alter_color_black(id, l, local, n) {
+    if (n) {
+        for (let i = 0; i <= 10; i++) {
+            document.getElementById(`${l}_${i}_${local}`).classList.remove('black');
+        }
+        document.getElementById(`${id}`).classList.add('black');
     }
-    document.getElementById(`${id}`).classList.add('black');
+    else {
+        for (let i = 0; i <= 4; i++) {
+            document.getElementById(`${l}_${i}_${local}`).classList.remove('black2');
+        }
+        document.getElementById(`${id}`).classList.add('black2');
+    }
 }
 
-function alter_color_gray(id) {
+function alter_color_gray(id, l, local) {
     for (let i = 0; i <= 4; i++)
-        document.getElementById(`e_${i}`).classList.remove('gray');
+        document.getElementById(`e_${i}_${local}`).classList.remove('gray');
     document.getElementById(`${id}`).classList.add('gray');
 }
 
@@ -27,6 +35,25 @@ function adicionarPergunta(tipo) {
     }
     else {
         alert('Limite de 10 perguntas atingido!');
+    }
+    if (tipo == ball10) {
+        for (let i2 = 0; i2 <= 10; i2++) {
+            document.getElementById(`n_${i2}`).id = `n_${i2}_${local}`;
+            document.getElementById(`n_${i2}_${local}`).setAttribute("onclick", `nota_nps = ${i2}; alter_color_black('n_${i2}_${local}', 'n', '${local}', true);`)
+        }
+    }
+    if (tipo == ball5) {
+        for (let i2 = 0; i2 <= 10; i2++) {
+            document.getElementById(`f_${i2}`).id = `f_${i2}_${local}`;
+            document.getElementById(`f_${i2}_${local}`).setAttribute("onclick", `nota_fiveB = ${i2}; alter_color_black('f_${i2}_${local}', 'f', '${local}', false);`)
+        }
+    }
+    if (tipo == radio5) {
+        for (let i = 0; i <= 4; i++) {
+            document.getElementById(`d_r_${i}`).id = `d_r_${i}_${local}`;
+            document.getElementById(`i_${i}`).id = `i_${i}_${local}`;
+            document.getElementById(`l_r_${i}`).id = `l_r_${i}_${local}`;
+        }
     }
 }
 
@@ -57,6 +84,7 @@ function btn_salvar_display() {
 
 function editar_pergunta(id) {
     let edit_pergunta;
+    let i;
     if (document.querySelector(`#q_${id} .radio5Q`) != undefined) {
         if (document.querySelector(`#q_${id} .card .align-center div.m-t-5`) == undefined) {
             edit_pergunta = document.querySelector(`#q_${id} .pergunta_editavel`).textContent;
@@ -64,40 +92,58 @@ function editar_pergunta(id) {
             document.getElementById('pergunta_editada').value = edit_pergunta;
             document.getElementById(`btn_e_${id}`).innerHTML = span_check;
             document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(0, 202, 0)';
-            for (let i = 0; i <= 5; i++) {
-                let valor_anterior = document.getElementById(`l_r_${i}`).textContent;
-                document.getElementById(`d_r_${i}`).innerHTML = input_editar_resposta;
+            for (i = 0; i <= 4; i++) {
+                let valor_anterior = document.getElementById(`l_r_${i}_${id}`).textContent;
+                document.getElementById(`d_r_${i}_${id}`).innerHTML = input_editar_resposta;
                 document.getElementById(`idPadrao`).id = `edit_radio_${i}`;
                 document.getElementById(`edit_radio_${i}`).value = valor_anterior;
             }
+            for (i = 1; i <= 10; i++) {
+                if (i != id)
+                    document.getElementById(`btn_e_${i}`).classList.add("none");
+                else
+                    document.getElementById(`btn_r_${i}`).classList.add("none");
+
+            }
+
         }
+
         else {
             edit_pergunta = document.querySelector(`#q_${id} .card .align-center .justify-content-center input#pergunta_editada`).value;
             document.getElementById(`btn_e_${id}`).innerHTML = span_edit;
             document.querySelector(`#q_${id} .card .align-center`).innerHTML = h3_pergunta;
             document.querySelector(`#q_${id} .card .align-center h3.pergunta_editavel`).textContent = edit_pergunta;
-            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(79, 185, 255)';
-            for (let i = 0; i <= 5; i++) {
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(96,126,238)';
+            for (i = 0; i <= 4; i++) {
                 let valor_anterior_ed = document.getElementById(`edit_radio_${i}`).value;
-                document.getElementById(`d_r_${i}`).innerHTML = input_radio_padrao;
-                document.getElementById(`iPadrao`).id = `i_${i}`;
-                document.getElementById(`idPadraoRadio`).id = `l_r_${i}`;
-                document.getElementById(`l_r_${i}`).textContent = valor_anterior_ed;
+                document.getElementById(`d_r_${i}_${id}`).innerHTML = input_radio_padrao;
+                document.getElementById(`iPadrao`).id = `i_${i}_${id}`;
+                document.getElementById(`idPadraoRadio`).id = `l_r_${i}_${id}`;
+                document.getElementById(`l_r_${i}_${id}`).textContent = valor_anterior_ed;
+            }
+            for (i = 1; i <= 10; i++) {
+                if (i != id)
+                    document.getElementById(`btn_e_${i}`).classList.remove("none");
+                else
+                    document.getElementById(`btn_r_${i}`).classList.remove("none");
+
             }
         }
     }
 
     else {
         if (document.querySelector(`#q_${id} .card .align-center div.m-t-5`) == undefined) {
-            var lBlock = [];
             edit_pergunta = document.querySelector(`#q_${id} .pergunta_editavel`).textContent;
             document.querySelector(`#q_${id} .align-center`).innerHTML = input_editar_pergunta;
             document.getElementById('pergunta_editada').value = edit_pergunta;
             document.getElementById(`btn_e_${id}`).innerHTML = span_check;
             document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(0, 202, 0)';
-            for (let i = 1; i <= 10; i++) {
+            for (i = 1; i <= 10; i++) {
                 if (i != id) {
                     document.getElementById(`btn_e_${i}`).classList.add("none");
+                }
+                else {
+                    document.getElementById(`btn_r_${i}`).classList.add("none");
                 }
             }
         }
@@ -107,10 +153,12 @@ function editar_pergunta(id) {
             document.getElementById(`btn_e_${id}`).innerHTML = span_edit;
             document.querySelector(`#q_${id} .card .align-center`).innerHTML = h3_pergunta;
             document.querySelector(`#q_${id} .card .align-center h3.pergunta_editavel`).textContent = edit_pergunta;
-            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(79, 185, 255)';
-            for (let i = 1; i <= 10; i++) {
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(96,126,238)';
+            for (i = 1; i <= 10; i++) {
                 if (i != id)
                     document.getElementById(`btn_e_${i}`).classList.remove("none");
+                else
+                    document.getElementById(`btn_r_${i}`).classList.remove("none");
             }
         }
     }
@@ -119,6 +167,8 @@ function editar_pergunta(id) {
 function salvar_questionario() {
     let i;
     let pesquisa_personalizada;
+    for (i = 0; i <= 10; i++)
+        document.getElementById(`n_${i}`).classList.remove('black');
     for (i = 1; i <= 10; i++) {
         pesquisa_personalizada = pesquisa_personalizada + document.getElementById(`q_${i}`).outerHTML;
     }
@@ -148,11 +198,11 @@ class="material-symbols-outlined">
 edit
 </span>`;
 
-var h3_pergunta = `<h3 class="pergunta_editavel" id="text_quest"></h3>`;
+var h3_pergunta = `<h3 class="pergunta_editavel"></h3>`;
 
 var text = `<div class="card col-md-11 textQ">
 <div class="align-center">
-    <h3 class="pergunta_editavel" id="text_quest">Nos de sua opnião sobre nosso atendimento</h3>
+    <h3 class="pergunta_editavel">Nos de sua opnião sobre nosso atendimento</h3>
 </div>
 <div class="col-md-12">
     <input type="text" id="text_input" class="m-b-10 form-control" placeholder="Digite Aqui!">
@@ -166,28 +216,17 @@ var ball10 = `<div class="card col-md-11 align-items-center ball10Q">
 </div>
 <div class="col-md-11">
     <div class="align-center" id="notas_nps">
-        <div class="nota"><button class="btn" id="n_0"
-                onclick="nota_nps = 0; alter_color_black('n_0', 'n');">0</button></div>
-        <div class="nota"><button class="btn" id="n_1"
-                onclick="nota_nps = 1; alter_color_black('n_1', 'n');">1</button></div>
-        <div class="nota"><button class="btn" id="n_2"
-                onclick="nota_nps = 2; alter_color_black('n_2', 'n');">2</button></div>
-        <div class="nota"><button class="btn" id="n_3"
-                onclick="nota_nps = 3; alter_color_black('n_3', 'n');">3</button></div>
-        <div class="nota"><button class="btn" id="n_4"
-                onclick="nota_nps = 4; alter_color_black('n_4', 'n');">4</button></div>
-        <div class="nota"><button class="btn" id="n_5"
-                onclick="nota_nps = 5; alter_color_black('n_5', 'n');">5</button></div>
-        <div class="nota"><button class="btn" id="n_6"
-                onclick="nota_nps = 6; alter_color_black('n_6', 'n');">6</button></div>
-        <div class="nota"><button class="btn" id="n_7"
-                onclick="nota_nps = 7; alter_color_black('n_7', 'n');">7</button></div>
-        <div class="nota"><button class="btn" id="n_8"
-                onclick="nota_nps = 8; alter_color_black('n_8', 'n');">8</button></div>
-        <div class="nota"><button class="btn" id="n_9"
-                onclick="nota_nps = 9; alter_color_black('n_9', 'n');">9</button></div>
-        <div class="nota"><button class="btn" id="n_10"
-                onclick="nota_nps = 10; alter_color_black('n_10', 'n');">10</button></div>
+        <div class="nota"><button class="btn" id="n_0">0</button></div>
+        <div class="nota"><button class="btn" id="n_1">1</button></div>
+        <div class="nota"><button class="btn" id="n_2">2</button></div>
+        <div class="nota"><button class="btn" id="n_3">3</button></div>
+        <div class="nota"><button class="btn" id="n_4">4</button></div>
+        <div class="nota"><button class="btn" id="n_5">5</button></div>
+        <div class="nota"><button class="btn" id="n_6">6</button></div>
+        <div class="nota"><button class="btn" id="n_7">7</button></div>
+        <div class="nota"><button class="btn" id="n_8">8</button></div>
+        <div class="nota"><button class="btn" id="n_9">9</button></div>
+        <div class="nota"><button class="btn" id="n_10">10</button></div>
         <div>
             <span id="n_p_1"><b>NÂO INDICARIA</b></span>
             <span id="n_p_2"><b>INDICARIA</b></span>
@@ -203,16 +242,11 @@ var ball5 = `<div class="card col-md-11 align-items-center ball5Q">
 <div class="col-md-11">
     <div class="align-center" id="notas_five">
         <div class="align-center" id="notas_five">
-            <div class="nota_five"><button class="btn_five" id="f_1"
-                    onclick="nota_nps = 1; alter_color_black('f_1', 'f');">1</button></div>
-            <div class="nota_five"><button class="btn_five" id="f_2"
-                    onclick="nota_nps = 2; alter_color_black('f_2', 'f');">2</button></div>
-            <div class="nota_five"><button class="btn_five" id="f_3"
-                    onclick="nota_nps = 3; alter_color_black('f_3', 'f');">3</button></div>
-            <div class="nota_five"><button class="btn_five" id="f_4"
-                    onclick="nota_nps = 4; alter_color_black('f_4', 'f');">4</button></div>
-            <div class="nota_five"><button class="btn_five" id="f_5"
-                    onclick="nota_nps = 4; alter_color_black('f_5', 'f');">5</button></div>
+            <div class="nota_five"><button class="btn_five" id="f_0">1</button></div>
+            <div class="nota_five"><button class="btn_five" id="f_1">2</button></div>
+            <div class="nota_five"><button class="btn_five" id="f_2">3</button></div>
+            <div class="nota_five"><button class="btn_five" id="f_3">4</button></div>
+            <div class="nota_five"><button class="btn_five" id="f_4">5</button></div>
         </div>
         <div class="justify-content-center">
             <div class="col-md-7">

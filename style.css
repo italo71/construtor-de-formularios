@@ -3,6 +3,11 @@
     background-color: black !important;
 }
 
+.black2{
+    color: white !important;
+    background-color: black !important;
+}
+
 .gray{
     background-color: rgba(0, 225, 255, 0.192);
     border-radius: 50px;
@@ -47,7 +52,7 @@
 }
 
 #notas_nps{
-    margin-top: 50px;
+    margin-top: 35px;
 }
 
 .btn:hover{
@@ -63,47 +68,47 @@
     float: right;
 }
 
-#n_0{
+.nota:nth-of-type(1) button{
     background-color: red;
     color: black;
 }
-#n_1{
+.nota:nth-of-type(2) button{
     background-color: rgb(255, 90, 0);
     color: black;
 }
-#n_2{
+.nota:nth-of-type(3) button{
     background-color: rgb(255, 120, 0);
     color: black;
 }
-#n_3{
+.nota:nth-of-type(4) button{
     background-color: rgb(255, 150, 0);
     color: black;
 }
-#n_4{
+.nota:nth-of-type(5) button{
     background-color: rgb(255, 200, 0);
     color: black;
 }
-#n_5{
+.nota:nth-of-type(6) button{
     background-color: rgb(255, 255, 0);
     color: black;
 }
-#n_6{
+.nota:nth-of-type(7) button{
     background-color: rgb(233, 255, 40);
     color: black;
 }
-#n_7{
+.nota:nth-of-type(8) button{
     background-color: rgb(214, 255, 65);
     color: black;
 }
-#n_8{
+.nota:nth-of-type(9) button{
     background-color: rgb(200, 255, 34);
     color: black;
 }
-#n_9{
+.nota:nth-of-type(10) button{
     background-color: rgb(150, 255, 0);
     color: black;
 }
-#n_10{
+.nota:nth-of-type(11) button{
     background-color: rgb(0, 255, 0);
     color: black;
 }
@@ -118,7 +123,6 @@
     color: white;
     margin: 5px;
 }
-
 
 .inp_nota{
     display: none;
@@ -151,23 +155,23 @@
     float: right;
 }
 
-#f_1{
+.nota_five:nth-of-type(1) button{
     background-color: rgb(255, 0, 0);
     color: black;
 }
-#f_2{
+.nota_five:nth-of-type(2) button{
     background-color: rgb(255, 115, 0);
     color: black;
 }
-#f_3{
+.nota_five:nth-of-type(3) button{
     background-color: rgb(255, 230, 0);
     color: black;
 }
-#f_4{
+.nota_five:nth-of-type(4) button{
     background-color: rgb(150, 200, 0);
     color: black;
 }
-#f_5{
+.nota_five:nth-of-type(5) button{
     background-color: rgb(0, 255, 0);
     color: black;
 }
