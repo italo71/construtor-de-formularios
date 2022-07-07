@@ -57,21 +57,73 @@ function btn_salvar_display() {
 
 function editar_pergunta(id) {
     let edit_pergunta;
-    if (document.querySelector(`#q_${id} .card .align-center div.m-t-5`) == undefined) {
-        edit_pergunta = document.querySelector(`#q_${id} .pergunta_editavel`).textContent;
-        document.querySelector(`#q_${id} .align-center`).innerHTML = input_editar_pergunta;
-        document.getElementById('pergunta_editada').value = edit_pergunta;
-        document.getElementById(`btn_e_${id}`).innerHTML = span_check;
-        document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(0, 202, 0)';
-        console.log(edit_pergunta);
+    if (document.querySelector(`#q_${id} .radio5Q`) != undefined) {
+        if (document.querySelector(`#q_${id} .card .align-center div.m-t-5`) == undefined) {
+            edit_pergunta = document.querySelector(`#q_${id} .pergunta_editavel`).textContent;
+            document.querySelector(`#q_${id} .align-center`).innerHTML = input_editar_pergunta;
+            document.getElementById('pergunta_editada').value = edit_pergunta;
+            document.getElementById(`btn_e_${id}`).innerHTML = span_check;
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(0, 202, 0)';
+            for (let i = 0; i <= 5; i++) {
+                let valor_anterior = document.getElementById(`l_r_${i}`).textContent;
+                document.getElementById(`d_r_${i}`).innerHTML = input_editar_resposta;
+                document.getElementById(`idPadrao`).id = `edit_radio_${i}`;
+                document.getElementById(`edit_radio_${i}`).value = valor_anterior;
+            }
+        }
+        else {
+            edit_pergunta = document.querySelector(`#q_${id} .card .align-center .justify-content-center input#pergunta_editada`).value;
+            document.getElementById(`btn_e_${id}`).innerHTML = span_edit;
+            document.querySelector(`#q_${id} .card .align-center`).innerHTML = h3_pergunta;
+            document.querySelector(`#q_${id} .card .align-center h3.pergunta_editavel`).textContent = edit_pergunta;
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(79, 185, 255)';
+            for (let i = 0; i <= 5; i++) {
+                let valor_anterior_ed = document.getElementById(`edit_radio_${i}`).value;
+                document.getElementById(`d_r_${i}`).innerHTML = input_radio_padrao;
+                document.getElementById(`iPadrao`).id = `i_${i}`;
+                document.getElementById(`idPadraoRadio`).id = `l_r_${i}`;
+                document.getElementById(`l_r_${i}`).textContent = valor_anterior_ed;
+            }
+        }
     }
+
     else {
-        edit_pergunta = document.querySelector(`#q_${id} .card .align-center .justify-content-center input#pergunta_editada`).value;
-        document.getElementById(`btn_e_${id}`).innerHTML = span_edit;
-        document.querySelector(`#q_${id} .card .align-center`).innerHTML = h3_pergunta;
-        document.querySelector(`#q_${id} .card .align-center h3.pergunta_editavel`).textContent = edit_pergunta;
-        console.log(edit_pergunta);
+        if (document.querySelector(`#q_${id} .card .align-center div.m-t-5`) == undefined) {
+            var lBlock = [];
+            edit_pergunta = document.querySelector(`#q_${id} .pergunta_editavel`).textContent;
+            document.querySelector(`#q_${id} .align-center`).innerHTML = input_editar_pergunta;
+            document.getElementById('pergunta_editada').value = edit_pergunta;
+            document.getElementById(`btn_e_${id}`).innerHTML = span_check;
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(0, 202, 0)';
+            for (let i = 1; i <= 10; i++) {
+                if (i != id) {
+                    document.getElementById(`btn_e_${i}`).classList.add("none");
+                }
+            }
+        }
+
+        else {
+            edit_pergunta = document.querySelector(`#q_${id} .card .align-center .justify-content-center input#pergunta_editada`).value;
+            document.getElementById(`btn_e_${id}`).innerHTML = span_edit;
+            document.querySelector(`#q_${id} .card .align-center`).innerHTML = h3_pergunta;
+            document.querySelector(`#q_${id} .card .align-center h3.pergunta_editavel`).textContent = edit_pergunta;
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(79, 185, 255)';
+            for (let i = 1; i <= 10; i++) {
+                if (i != id)
+                    document.getElementById(`btn_e_${i}`).classList.remove("none");
+            }
+        }
     }
+}
+
+function salvar_questionario() {
+    let i;
+    let pesquisa_personalizada;
+    for (i = 1; i <= 10; i++) {
+        pesquisa_personalizada = pesquisa_personalizada + document.getElementById(`q_${i}`).outerHTML;
+    }
+    JSON.stringify(pesquisa_personalizada);
+    console.log(pesquisa_personalizada);
 }
 
 /* Declarações */
@@ -79,6 +131,13 @@ function editar_pergunta(id) {
 var input_editar_pergunta = `<div class="justify-content-center m-t-5 m-b-5">
 <input type="text" name="" id="pergunta_editada" class="form-control">
 </div>`
+
+var input_editar_resposta = `<div class="justify-content-center m-t-5 m-b-5">
+<input type="text" name="" class="form-control" id="idPadrao">
+</div>`
+
+var input_radio_padrao = `<input type="radio" id="iPadrao" value="0"
+name="i"><label for="0" id="idPadraoRadio"></label>`;
 
 var span_check = `<span class="material-symbols-outlined">
 check
@@ -91,7 +150,7 @@ edit
 
 var h3_pergunta = `<h3 class="pergunta_editavel" id="text_quest"></h3>`;
 
-var text = `<div class="card col-md-11">
+var text = `<div class="card col-md-11 textQ">
 <div class="align-center">
     <h3 class="pergunta_editavel" id="text_quest">Nos de sua opnião sobre nosso atendimento</h3>
 </div>
@@ -100,7 +159,7 @@ var text = `<div class="card col-md-11">
     </div>
 </div>`;
 
-var ball10 = `<div class="card col-md-11 align-items-center">
+var ball10 = `<div class="card col-md-11 align-items-center ball10Q">
 <div class="align-center">
     <h3 class="pergunta_editavel" id="nps_quest">Numa escala de 0 a 10, quanto você indicaria a <span id="nome_emp">**Nossa
             empresa**</span> a um amigo?</h3>
@@ -137,7 +196,7 @@ var ball10 = `<div class="card col-md-11 align-items-center">
 </div>
 </div>`;
 
-var ball5 = `<div class="card col-md-11 align-items-center">
+var ball5 = `<div class="card col-md-11 align-items-center ball5Q">
 <div class="align-center">
     <h3 class="pergunta_editavel" id="fiveB_quest">Avalie nossos serviço de 1 a 5</h3>
 </div>
@@ -165,9 +224,10 @@ var ball5 = `<div class="card col-md-11 align-items-center">
 </div>
 </div>`;
 
-var radio5 = `<div class="card col-md-11 align-itens-center">
+var radio5 = `<div class="card col-md-11 align-itens-center radio5Q">
 <div class="align-center">
-    <h3 class="pergunta_editavel" id="csat_quest">**Como você classificaria a *nossa empresa* sobre o valor total que a empresa
+    <h3 class="pergunta_editavel" id="csat_quest">**Como você classificaria a *nossa empresa*
+        sobre o valor total que a empresa
         oferece,
         em comparação ao valor total oferecido por outros fornecedores de produtos / serviços
         similares?**</h3>
@@ -175,23 +235,24 @@ var radio5 = `<div class="card col-md-11 align-itens-center">
 <div class="col-md-12">
     <div class="align-center" id="notas_nvs">
         <div class="d-flex justify-content-center">
-            <div class="align_text_justfy">
-                <input type="radio" id="i_0" value="0" name="i"><label for="0">significativamente
-                    melhor</label><br>
-                <input type="radio" id="i_1" value="1" name="i"><label for="1">Um pouco
-                    melhor</label><br>
-                <input type="radio" id="i_2" value="2" name="i"><label for="2">Nem melhor, nem
-                    pior</label><br>
-                <input type="radio" id="i_3" value="3" name="i"><label for="3">Um pouco pior</label><br>
-                <input type="radio" id="i_4" value="4" name="i"><label for="4">significativamente
-                    Pior</label><br>
+            <div class="align_text_justfy inputs_r">
+                <div class="div_radio" id="d_r_0"><input type="radio" id="i_0" value="0"
+                        name="i"><label for="0" id="l_r_0">Significativamente melhor</label></div><br>
+                <div class="div_radio" id="d_r_1"><input type="radio" id="i_1" value="0"
+                        name="i"><label for="0" id="l_r_1">Um pouco melhor</label></div><br>
+                <div class="div_radio" id="d_r_2"><input type="radio" id="i_2" value="0"
+                        name="i"><label for="0" id="l_r_2">Nem melhor, Nem pior</label></div><br>
+                <div class="div_radio" id="d_r_3"><input type="radio" id="i_3" value="0"
+                        name="i"><label for="0" id="l_r_3">Um pouco pior</label></div><br>
+                <div class="div_radio" id="d_r_4"><input type="radio" id="i_4" value="0"
+                        name="i"><label for="0" id="l_r_4">Significativamente pior</label></div><br>
             </div>
         </div>
     </div>
 </div>
 </div>`;
 
-var radio2 = `<div class="card col-md-11 align-items-center">
+var radio2 = `<div class="card col-md-11 align-items-center radio2Q">
 <div class="align-center">
     <h3 class="pergunta_editavel" id="double_quest">Vistoria foi aprovada</h3>
 </div>
@@ -203,7 +264,7 @@ var radio2 = `<div class="card col-md-11 align-items-center">
 </div>
 </div>`;
 
-var emoji5 = `<div class="card col-md-11 align-itens-center">
+var emoji5 = `<div class="card col-md-11 align-itens-center emoji5Q">
 <div class="align-center">
     <h3 class="pergunta_editavel" id="csat_quest">Qual a sua satisfação com o nosso atendimento?</h3>
 </div>
