@@ -101,7 +101,7 @@ function btn_remove_display(d, id) {
     }
 }
 
-function btn_salvar_display() {/* Função para definir se o botão salvar deve ser mantido ativado após a remoção de uma pergunta */
+function btn_salvar_display(p) {/* Função para definir se o botão salvar deve ser mantido ativado após a remoção de uma pergunta */
     let tem_card = true;
     for (let i = 1; i <= 10; i++) {/* repetiçao para passar por todas as divs onde podem ter perguntas */
         if (document.querySelectorAll('.question_box .card').length == 0) {/* Caso não haja nenhuma div com a class card dendro da div de pergunta, a variável de controle é definida como false */
@@ -109,8 +109,12 @@ function btn_salvar_display() {/* Função para definir se o botão salvar deve 
         }
     }
 
-    if (!(tem_card)) {/* caso a variavel de controle seja falsa o botão salvar é desabilitado */
+    if (!(tem_card) || p == false) {/* caso a variavel de controle seja falsa o botão salvar é desabilitado */
         document.getElementById('btn_salva_info').style.display = 'none';
+    }
+
+    if(p){
+        document.getElementById('btn_salva_info').style.display = 'block';
     }
 }
 
@@ -148,7 +152,7 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
                     document.getElementById(`iParametro_${i}_${id}`).classList.add('n_p_r');
                 }
             }
-
+            btn_salvar_display(false);
             for (i = 1; i <= 10; i++) {/* repetição para adicionar a classe none à todos os botões de edição exceto o que foi precionado para efitar bug no momento de concluir a ação */
                 if (i != id) {
                     document.getElementById(`btn_e_${i}`).classList.add("none");
@@ -170,6 +174,7 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
             document.querySelector(`#q_${id} .card .align-center h3.pergunta_editavel`).textContent = edit_pergunta;
             /* Altera a cor do background */
             document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(96,126,238)';
+            btn_salvar_display(true);
             for (i = 1; i <= 2; i++) {/* repetição para alterar os IDs dos parametros de baixo das bolas */
                 /* recupera valor editado */
                 let last_parametro = document.getElementById(`iParametro_${i}_${id}`).value
@@ -224,6 +229,7 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
                     document.getElementById(`iParametro_${i}_${id}`).classList.add('n_p_r');
                 }
             }
+            btn_salvar_display(false);
             for (i = 1; i <= 10; i++) {/* Repetição para desabilitar os botões de edição das perguntas e o de remover da pergunta que está sendo editada */
                 if (i != id) {
                     document.getElementById(`btn_e_${i}`).classList.add("none");
@@ -262,6 +268,7 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
                     document.getElementById(`f_p_${i}_${id}`).classList.add('n_p_r');
                 }
             }
+            btn_salvar_display(true);
             for (i = 1; i <= 10; i++) {/* retira a classe de estilo none dos botões de edição e remover */
                 if (i != id)
                     document.getElementById(`btn_e_${i}`).classList.remove("none");
@@ -290,6 +297,7 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
                 document.getElementById(`idPadrao`).id = `edit_radio_${i}`;
                 document.getElementById(`edit_radio_${i}`).value = valor_anterior;
             }
+            btn_salvar_display(false);
             for (i = 1; i <= 10; i++) {/* desabilita os botões de edição das perguntas distintas à que está sendo editada e o botão remover da pergunta em questão */
                 if (i != id)
                     document.getElementById(`btn_e_${i}`).classList.add("none");
@@ -318,6 +326,7 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
                 document.getElementById(`idPadraoRadio`).id = `l_r_${i}_${id}`;
                 document.getElementById(`l_r_${i}_${id}`).textContent = valor_anterior_ed;
             }
+            btn_salvar_display(true);
             for (i = 1; i <= 10; i++) {/* reexibe os botões */
                 if (i != id)
                     document.getElementById(`btn_e_${i}`).classList.remove("none");
@@ -341,6 +350,7 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
             document.getElementById(`btn_e_${id}`).innerHTML = span_check;
             /* altera a cor do botão de edição */
             document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(0, 202, 0)';
+            btn_salvar_display(false);
             for (i = 1; i <= 10; i++) {/* insere a classe de estilo none dos botões de edição e remover */
                 if (i != id) {
                     document.getElementById(`btn_e_${i}`).classList.add("none");
@@ -362,6 +372,7 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
             document.querySelector(`#q_${id} .card .align-center h3.pergunta_editavel`).textContent = edit_pergunta;
             /* altera a cor do botão de edição */
             document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(96,126,238)';
+            btn_salvar_display(true);
             for (i = 1; i <= 10; i++) {/* remove as classes de estilo dos botões */
                 if (i != id)
                     document.getElementById(`btn_e_${i}`).classList.remove("none");
