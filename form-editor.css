@@ -223,8 +223,8 @@ ul {
     font-weight: bold;
 }
 
-#notas_five_ {
-    margin-top: 5px;
+.maxW{
+    max-width: 100%;
 }
 
 .btn_five_:hover {

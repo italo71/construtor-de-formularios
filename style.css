@@ -60,12 +60,20 @@
     background-color: black !important;
 }
 
-#n_p_1{
-    float: left;
+.n_p_l{
+    float: left !important;
 }
 
-#n_p_2{
+.n_p_r{
+    float: right !important;
+}
+
+.fRight{
     float: right;
+}
+
+.fLeft{
+    float: left;
 }
 
 .nota:nth-of-type(1) button{
@@ -138,8 +146,8 @@
     font-weight: bold;
 }
 
-#notas_five{
-    margin-top: 5px;
+.maxW{
+    max-width: 100%;
 }
 
 .btn_five:hover{
