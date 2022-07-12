@@ -17,7 +17,7 @@ function adicionarPergunta(tipo) {
         /* inserção da pergunta na div de ID {local} */
         document.getElementById(`q_${local}`).innerHTML = `${tipo}`;
         /* Define o botão salvar com display block fazendo com q ele fique disponível ao usuário */
-        document.getElementById('btn_salva_info').style.display = 'block';
+        document.getElementById("btn_salva_info").style.display = "block";
         /* chama função btn_remove_display para que os botões de edição e remoção da pergunta sejam exibidos */
         btn_remove_display(true, local)
     }
@@ -25,7 +25,7 @@ function adicionarPergunta(tipo) {
     else {
         /* caso não seja definido local para inserir uma pergunta isso significa que ja foram colocadas as 10 perguntas */
         /* uma mensagem de erro é exibida para o usuário */
-        alert('Limite de 10 perguntas atingido!');
+        alert("Limite de 10 perguntas atingido!");
     }
 
     /* Definição de ids */
@@ -39,7 +39,7 @@ function adicionarPergunta(tipo) {
             /* quando a pergunta é adicionada cada nota recebe um id padrão seguindo o padrão n_{0 a 10} e é substituido pelo ID n_{0 a 10}_{numero da pergunta podendo ser de 1 a 10} */
             document.getElementById(`n_${i2}`).id = `n_${i2}_${local}`;
             /* Atibuto onclick setado para quando a pesquisa for realizada */
-            document.getElementById(`n_${i2}_${local}`).setAttribute("onclick", `nota_nps = ${i2}; alter_color_black('n_${i2}_${local}', 'n', '${local}', true);`)
+            document.getElementById(`n_${i2}_${local}`).setAttribute("onclick", `nota_nps = ${i2}; alter_color_black("n_${i2}_${local}", "n", "${local}", true);`)
         }
         /* Definição dos IDs das divs de parametro de resposta */
         for (let i = 1; i <= 2; i++) {
@@ -49,7 +49,7 @@ function adicionarPergunta(tipo) {
             document.getElementById(`d_n_p_${i}`).id = `d_n_p_${i}_${local}`
         }
         /* troca id padrão n_ps para n_ps_{local(numero de 1 a 10)} */
-        document.getElementById('n_ps').id = `n_ps_${local}`;
+        document.getElementById("n_ps").id = `n_ps_${local}`;
     }
 
     if (tipo == ball5) {
@@ -58,7 +58,7 @@ function adicionarPergunta(tipo) {
             /* quando a pergunta é adicionada cada nota recebe um id padrão seguindo o padrão n_{0 a 4} e é substituido pelo ID n_{0 a 4}_{numero da pergunta podendo ser de 1 a 10} */
             document.getElementById(`f_${i3}`).id = `f_${i3}_${local}`;
             /* Atibuto onclick setado para quando a pesquisa for realizada */
-            document.getElementById(`f_${i3}_${local}`).setAttribute("onclick", `nota_fiveB = ${i3}; alter_color_black('f_${i3}_${local}', 'f', '${local}', false);`)
+            document.getElementById(`f_${i3}_${local}`).setAttribute("onclick", `nota_fiveB = ${i3}; alter_color_black("f_${i3}_${local}", "f", "${local}", false);`)
         }
         /* Definição dos IDs das divs de parametro de resposta */
         for (let i = 1; i <= 2; i++) {
@@ -84,16 +84,16 @@ function btn_remove_display(d, id) {
     /* parametro "d" usado para saber se o display sera "none(false)" ou "block(true)" */
     if (d) {/* quando uma pergunta é adicionada esses comandos são executados */
         /* btn_r_{numero de 1 a 10} = botão remover */
-        document.getElementById(`btn_r_${id}`).style.display = 'block';
+        document.getElementById(`btn_r_${id}`).style.display = "block";
         /* btn_e_{numero de 1 a 10} = botão editar */
-        document.getElementById(`btn_e_${id}`).style.display = 'block';
+        document.getElementById(`btn_e_${id}`).style.display = "block";
     }
 
     else {/* quando uma pergunta é removida eses comandos são executados */
         /* btn_r_{numero de 1 a 10} = botão remover */
-        document.getElementById(`btn_r_${id}`).style.display = 'none';
+        document.getElementById(`btn_r_${id}`).style.display = "none";
         /* btn_e_{numero de 1 a 10} = botão remover */
-        document.getElementById(`btn_e_${id}`).style.display = 'none';
+        document.getElementById(`btn_e_${id}`).style.display = "none";
         /* remove a pergunta de dentro da div */
         document.getElementById(`q_${id}`).innerHTML = "";
         /* chama a função btn_salvar_display para verificar se o botão salvar deve ou não ser mantido ativo */
@@ -104,17 +104,17 @@ function btn_remove_display(d, id) {
 function btn_salvar_display(p) {/* Função para definir se o botão salvar deve ser mantido ativado após a remoção de uma pergunta */
     let tem_card = true;
     for (let i = 1; i <= 10; i++) {/* repetiçao para passar por todas as divs onde podem ter perguntas */
-        if (document.querySelectorAll('.question_box .card').length == 0) {/* Caso não haja nenhuma div com a class card dendro da div de pergunta, a variável de controle é definida como false */
+        if (document.querySelectorAll(".question_box .card").length == 0) {/* Caso não haja nenhuma div com a class card dendro da div de pergunta, a variável de controle é definida como false */
             tem_card = false;
         }
     }
 
     if (!(tem_card) || p == false) {/* caso a variavel de controle seja falsa o botão salvar é desabilitado */
-        document.getElementById('btn_salva_info').style.display = 'none';
+        document.getElementById("btn_salva_info").style.display = "none";
     }
 
     if(p){
-        document.getElementById('btn_salva_info').style.display = 'block';
+        document.getElementById("btn_salva_info").style.display = "block";
     }
 }
 
@@ -131,25 +131,25 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
             /* Insere o input do tipo texto no lugar do h3 */
             document.querySelector(`#q_${id} .align-center`).innerHTML = input_editar_pergunta;
             /* Coloca o valor da pergunta dentro do input */
-            document.getElementById('pergunta_editada').value = edit_pergunta;
+            document.getElementById("pergunta_editada").value = edit_pergunta;
             /* Altera o botão de edição para botão de check (indicando que o proximo clica ira salvar as alterações) */
             document.getElementById(`btn_e_${id}`).innerHTML = span_check;
             /* Altera a cor do background do botão de edição para verde */
-            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(0, 202, 0)';
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = "rgb(0, 202, 0)";
             for (i = 1; i <= 2; i++) {/* Repetição para alterar os textos que ficam embaixo das bolas para inputs para que o usuário possa modificar seus conteudos */
                 /* Recupera o valor de texto */
                 let last_parametro = document.getElementById(`n_p_${i}_${id}`).textContent;
                 /* altera de h3 para input */
                 document.getElementById(`d_n_p_${i}_${id}`).innerHTML = editar_parametro;
                 /* altera o ID padrão para um ID único de padrão {iParametro_{1 ou 2}_{local da pergunta}} */
-                document.getElementById('idPadrao').id = `iParametro_${i}_${id}`;
+                document.getElementById("idPadrao").id = `iParametro_${i}_${id}`;
                 /* Insere o valor anterios no input */
                 document.getElementById(`iParametro_${i}_${id}`).value = last_parametro;
                 if (i == 1) {/* caso seja o input da esquerda (primeiro a ser adicionado) é acresentado a classe n_p_l para manter o input na esquerda */
-                    document.getElementById(`iParametro_${i}_${id}`).classList.add('n_p_l');
+                    document.getElementById(`iParametro_${i}_${id}`).classList.add("n_p_l");
                 }
                 else if (i == 2) {/* caso seja o input da direitra (segundo a ser adicionado) é acresentado a classe n_p_r para manter o input na direita */
-                    document.getElementById(`iParametro_${i}_${id}`).classList.add('n_p_r');
+                    document.getElementById(`iParametro_${i}_${id}`).classList.add("n_p_r");
                 }
             }
             btn_salvar_display(false);
@@ -173,7 +173,7 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
             /* insere o valor da pergunta no elemento H3 */
             document.querySelector(`#q_${id} .card .align-center h3.pergunta_editavel`).textContent = edit_pergunta;
             /* Altera a cor do background */
-            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(96,126,238)';
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = "rgb(96,126,238)";
             btn_salvar_display(true);
             for (i = 1; i <= 2; i++) {/* repetição para alterar os IDs dos parametros de baixo das bolas */
                 /* recupera valor editado */
@@ -185,10 +185,10 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
                 /* Adiciona o valor editado */
                 document.getElementById(`n_p_${i}_${id}`).textContent = last_parametro;
                 if (i == 1) {/* Adiciona classe n_p_l para manter o texto à esquerda */
-                    document.getElementById(`n_p_${i}_${id}`).classList.add('n_p_l');
+                    document.getElementById(`n_p_${i}_${id}`).classList.add("n_p_l");
                 }
                 else if (i == 2) {/* Adiciona classe n_p_r para manter o texto à direita */
-                    document.getElementById(`n_p_${i}_${id}`).classList.add('n_p_r');
+                    document.getElementById(`n_p_${i}_${id}`).classList.add("n_p_r");
                 }
             }
             for (i = 1; i <= 10; i++) {/* repetição para retirar a classe none de todos os botões de editar e remover */
@@ -208,25 +208,25 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
             /* Insere o input no lugar do h3 */
             document.querySelector(`#q_${id} .align-center`).innerHTML = input_editar_pergunta;
             /* restaura o valor da pergunta */
-            document.getElementById('pergunta_editada').value = edit_pergunta;
+            document.getElementById("pergunta_editada").value = edit_pergunta;
             /* altera o icone de edição para check */
             document.getElementById(`btn_e_${id}`).innerHTML = span_check;
             /* altera o backgroundcolor do botão edição */
-            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(0, 202, 0)';
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = "rgb(0, 202, 0)";
             for (i = 1; i <= 2; i++) {/* Repetição para alterar os textos abaixo das bolas (parametros) */
                 /* recupera o valor do input */
                 let last_parametro = document.getElementById(`f_p_${i}_${id}`).textContent;
                 /* adiciona o input */
                 document.getElementById(`d_f_p_${i}_${id}`).innerHTML = editar_parametro;
                 /* altera o id do input */
-                document.getElementById('idPadrao').id = `iParametro_${i}_${id}`;
+                document.getElementById("idPadrao").id = `iParametro_${i}_${id}`;
                 /* restaura o valor do input */
                 document.getElementById(`iParametro_${i}_${id}`).value = last_parametro;
                 if (i == 1) {/* repetição para adicionar as classes de estilo (n_p_l mantem a esquerda e n_p_r mantem a direita) */
-                    document.getElementById(`iParametro_${i}_${id}`).classList.add('n_p_l');
+                    document.getElementById(`iParametro_${i}_${id}`).classList.add("n_p_l");
                 }
                 else if (i == 2) {
-                    document.getElementById(`iParametro_${i}_${id}`).classList.add('n_p_r');
+                    document.getElementById(`iParametro_${i}_${id}`).classList.add("n_p_r");
                 }
             }
             btn_salvar_display(false);
@@ -251,7 +251,7 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
             /* insere o valor editado no h3 */
             document.querySelector(`#q_${id} .card .align-center h3.pergunta_editavel`).textContent = edit_pergunta;
             /* altera a cor do botão de edição */
-            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(96,126,238)';
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = "rgb(96,126,238)";
             for (i = 1; i <= 2; i++) {/* repetição para alterar os parametros */
                 /* recupera o valor editado */
                 let last_parametro = document.getElementById(`iParametro_${i}_${id}`).value
@@ -262,10 +262,10 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
                 /* insere o texto editado */
                 document.getElementById(`f_p_${i}_${id}`).textContent = last_parametro;
                 if (i == 1) {/* adiciona as classes de estilo */
-                    document.getElementById(`f_p_${i}_${id}`).classList.add('n_p_l');
+                    document.getElementById(`f_p_${i}_${id}`).classList.add("n_p_l");
                 }
                 else if (i == 2) {
-                    document.getElementById(`f_p_${i}_${id}`).classList.add('n_p_r');
+                    document.getElementById(`f_p_${i}_${id}`).classList.add("n_p_r");
                 }
             }
             btn_salvar_display(true);
@@ -286,11 +286,11 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
             /* insere o input do tipo text */
             document.querySelector(`#q_${id} .align-center`).innerHTML = input_editar_pergunta;
             /* insere o valor antigo */
-            document.getElementById('pergunta_editada').value = edit_pergunta;
+            document.getElementById("pergunta_editada").value = edit_pergunta;
             /* altera o icone do botão de edição */
             document.getElementById(`btn_e_${id}`).innerHTML = span_check;
             /* altera a cor do botão */
-            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(0, 202, 0)';
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = "rgb(0, 202, 0)";
             for (i = 0; i <= 4; i++) {/* altera as respostas para o modo de edição */
                 let valor_anterior = document.getElementById(`l_r_${i}_${id}`).textContent;
                 document.getElementById(`d_r_${i}_${id}`).innerHTML = input_editar_resposta;
@@ -318,7 +318,7 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
             /* insere o valor editado */
             document.querySelector(`#q_${id} .card .align-center h3.pergunta_editavel`).textContent = edit_pergunta;
             /* altera a cor de fundo do botão */
-            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(96,126,238)';
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = "rgb(96,126,238)";
             for (i = 0; i <= 4; i++) {/* altera as respostas para o modo de exibição */
                 let valor_anterior_ed = document.getElementById(`edit_radio_${i}`).value;
                 document.getElementById(`d_r_${i}_${id}`).innerHTML = input_radio_padrao;
@@ -345,11 +345,11 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
             /* insere o input text */
             document.querySelector(`#q_${id} .align-center`).innerHTML = input_editar_pergunta;
             /* insere o valor anterior */
-            document.getElementById('pergunta_editada').value = edit_pergunta;
+            document.getElementById("pergunta_editada").value = edit_pergunta;
             /* altera o icone do botão de edição */
             document.getElementById(`btn_e_${id}`).innerHTML = span_check;
             /* altera a cor do botão de edição */
-            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(0, 202, 0)';
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = "rgb(0, 202, 0)";
             btn_salvar_display(false);
             for (i = 1; i <= 10; i++) {/* insere a classe de estilo none dos botões de edição e remover */
                 if (i != id) {
@@ -371,7 +371,7 @@ function editar_pergunta(id) {/* ‼‼‼‼‼‼‼‼‼‼ ATENÇÂO ‼‼
             /* insere o valor editado */
             document.querySelector(`#q_${id} .card .align-center h3.pergunta_editavel`).textContent = edit_pergunta;
             /* altera a cor do botão de edição */
-            document.getElementById(`btn_e_${id}`).style.backgroundColor = 'rgb(96,126,238)';
+            document.getElementById(`btn_e_${id}`).style.backgroundColor = "rgb(96,126,238)";
             btn_salvar_display(true);
             for (i = 1; i <= 10; i++) {/* remove as classes de estilo dos botões */
                 if (i != id)
@@ -395,6 +395,8 @@ function salvar_questionario() {/* Função usada para salvar o preset do questi
     JSON.stringify(pesquisa_personalizada);
     console.log(pesquisa_personalizada);
 }
+
+
 
 /* Declarações */
 /* aqui é onde se encontram salvos os padrões das perguntas e inputs editáveis */
@@ -534,19 +536,19 @@ var emoji5 = `<div class="card col-md-12 align-itens-center emoji5Q">
 <div class="col-md-12">
     <div class="align-center" id="notas_csat">
         <div class="emojis col-12"><button class="btn_emoji w-50"
-                onclick="nota_csat = 0; alter_color_gray('e_0');" id="e_0"><i
+                onclick="nota_csat = 0; alter_color_gray("e_0");" id="e_0"><i
                     class="iEmoji bi bi-emoji-laughing"></i><span>Muito Satisfeito</span></button></div>
         <div class="emojis col-12"><button class="btn_emoji w-50"
-                onclick="nota_csat = 1; alter_color_gray('e_1');" id="e_1"><i
+                onclick="nota_csat = 1; alter_color_gray("e_1");" id="e_1"><i
                     class="iEmoji bi bi-emoji-smile"></i><span>Satisfeito</span></button></div>
         <div class="emojis col-12"><button class="btn_emoji w-50"
-                onclick="nota_csat = 2; alter_color_gray('e_2');" id="e_2"><i
+                onclick="nota_csat = 2; alter_color_gray("e_2");" id="e_2"><i
                     class="iEmoji bi bi-emoji-neutral"></i><span>Indiferente</span></button></div>
         <div class="emojis col-12"><button class="btn_emoji w-50"
-                onclick="nota_csat = 3; alter_color_gray('e_3');" id="e_3"><i
+                onclick="nota_csat = 3; alter_color_gray("e_3");" id="e_3"><i
                     class="iEmoji bi bi-emoji-frown"></i><span>Insatifeito</span></button></div>
         <div class="emojis col-12"><button class="btn_emoji w-50"
-                onclick="nota_csat = 4; alter_color_gray('e_4');" id="e_4"><i
+                onclick="nota_csat = 4; alter_color_gray("e_4");" id="e_4"><i
                     class="iEmoji bi bi-emoji-angry"></i><span>Muito Insatifeito</span></button></div>
     </div>
 </div>

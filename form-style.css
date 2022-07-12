@@ -1,0 +1,645 @@
+* {
+    margin: 0;
+}
+
+/*  */
+
+.nota_ {
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    display: inline-block;
+    color: white;
+    margin-bottom: 25px;
+    margin-right: 15px;
+}
+
+ul {
+    list-style: none;
+}
+
+.inp_nota_ {
+    display: none;
+}
+
+.nota_ {
+    margin-right: 16px;
+}
+
+.nota_ .btn_ {
+
+    border-radius: 100% !important;
+    box-shadow: none !important;
+    z-index: 99;
+    font-weight: bold;
+    border: none;
+    position: relative;
+    align-content: space-between;
+}
+
+.btn_ {
+    width: 23px;
+    height: 23px;
+    padding: 0 !important;
+}
+
+#notas_nps_ {
+    margin: 0 auto;
+}
+
+.btn_:hover {
+    color: white !important;
+    background-color: black !important;
+}
+
+#n_p_1_ {
+    float: left;
+    font-size: 8px;
+}
+
+#n_p_2_ {
+    float: right;
+    font-size: 8px;
+}
+
+#n_0_ {
+    background-color: red;
+    color: black;
+}
+
+#n_1_ {
+    background-color: rgb(255, 90, 0);
+    color: black;
+}
+
+#n_2_ {
+    background-color: rgb(255, 120, 0);
+    color: black;
+}
+
+#n_3_ {
+    background-color: rgb(255, 150, 0);
+    color: black;
+}
+
+#n_4_ {
+    background-color: rgb(255, 200, 0);
+    color: black;
+}
+
+#n_5_ {
+    background-color: rgb(255, 255, 0);
+    color: black;
+}
+
+#n_6_ {
+    background-color: rgb(233, 255, 40);
+    color: black;
+}
+
+#n_7_ {
+    background-color: rgb(214, 255, 65);
+    color: black;
+}
+
+#n_8_ {
+    background-color: rgb(200, 255, 34);
+    color: black;
+}
+
+#n_9_ {
+    background-color: rgb(150, 255, 0);
+    color: black;
+}
+
+#n_10_ {
+    background-color: rgb(0, 255, 0);
+    color: black;
+}
+
+/* CSAT */
+
+.iEmoji_ {
+    font-size: 20px !important;
+}
+
+.iEmoji {
+    font-size: 30px !important;
+}
+
+.emojis {
+    margin: 0 auto;
+    text-align: left;
+}
+
+.btn_emoji span {
+    text-align: center;
+    margin: 1px 1px 1px 5px;
+    font-size: 100%;
+}
+
+#e_0_ {
+    color: rgb(0, 255, 0);
+}
+
+#e_1_ {
+    color: rgb(57, 127, 0);
+}
+
+#e_2_ {
+    color: rgb(117, 117, 117);
+}
+
+#e_3_ {
+    color: rgb(200, 100, 0);
+}
+
+#e_4_ {
+    color: rgb(255, 0, 0);
+}
+
+.emojis_ {
+    margin: 0 auto;
+    text-align: left;
+}
+
+.btn_emoji_ span {
+    text-align: center;
+    margin: 1px 1px 1px 5px;
+    font-size: 100%;
+}
+
+
+.btn_emoji_ {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    box-shadow: none;
+    text-align: justify;
+    align-items: center;
+}
+
+.btn_emoji_:hover {
+    background-color: rgba(163, 255, 255, 0.274) !important;
+    border-radius: 50px;
+}
+
+/* NVS */
+
+.input_range_ {
+    display: inline-block;
+}
+
+.drop_ {
+    display: block;
+}
+
+.drop_ input {
+    float: left;
+}
+
+/* fiveB */
+
+.nota_five_ {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    display: inline-block;
+    color: white;
+    margin: 5px;
+}
+
+
+.inp_nota_ {
+    display: none;
+}
+
+.nota_five_ .btn_five_ {
+    width: 100%;
+    height: 100%;
+    border-radius: 100% !important;
+    border: none;
+    box-shadow: none !important;
+    z-index: 99;
+    font-weight: bold;
+}
+
+.maxW{
+    max-width: 100%;
+}
+
+.btn_five_:hover {
+    color: white !important;
+    background-color: black !important;
+}
+
+#f_p_1_ {
+    float: left;
+    font-size: 70%;
+}
+
+#f_p_2_ {
+    float: right;
+    font-size: 70%;
+}
+
+#f_1_ {
+    background-color: rgb(255, 0, 0);
+    color: black;
+}
+
+#f_2_ {
+    background-color: rgb(255, 115, 0);
+    color: black;
+}
+
+#f_3_ {
+    background-color: rgb(255, 230, 0);
+    color: black;
+}
+
+#f_4_ {
+    background-color: rgb(150, 200, 0);
+    color: black;
+}
+
+#f_5_ {
+    background-color: rgb(0, 255, 0);
+    color: black;
+}
+
+/* outros */
+
+.btns {
+    margin: 8px 5px 0 0;
+}
+
+
+.mais span {
+    font-size: 20px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.menos span {
+    font-size: 20px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.mais, .menos {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    padding-top: 6px;
+}
+
+.mais {
+    background-color: rgb(76,175,80);
+}
+
+.menos {
+    background-color: rgb(158, 0, 0);
+    display: none;
+    border: none;
+}
+
+.question_box{
+    display: flex;
+    flex-grow: 1;
+    flex-basis: auto;
+    table-layout:fixed;
+}
+
+.btn_save{
+    float: right;
+    display: none;
+    margin: 0 10px 10px 0;
+    background-color: rgb(76,175,80);
+    border: none;
+}
+
+.editar{
+    background-color: rgb(96,126,238);
+    border: none;
+    padding: 5px 5px 1px 5px;
+    margin-top: 3px;
+    float: left;
+    display: none;
+}
+.editar span{
+    font-size: 20px;
+}
+.black{
+    color: white !important;
+    background-color: black !important;
+}
+
+.black2{
+    color: white !important;
+    background-color: black !important;
+}
+
+.gray{
+    background-color: rgba(0, 225, 255, 0.192);
+    border-radius: 50px;
+}
+
+.none{
+    display: none !important;
+}
+
+
+/* css geral */
+
+.notas_nvs{
+    text-align: left;
+}
+
+.align_text_justfy{
+    text-align: left;
+}
+
+/*  */
+.nota{
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    display: inline-block;
+    color: white;
+    margin: 5px;
+}
+
+.inp_nota{
+    display: none;
+}
+
+.nota .btn{
+    width: 100%;
+    height: 100%;
+    border-radius: 100% !important;
+    box-shadow: none !important;
+    z-index: 99;
+    font-weight: bold;
+}
+
+#notas_nps{
+    margin-top: 35px;
+}
+
+.btn:hover{
+    color: white !important;
+    background-color: black !important;
+}
+
+.n_p_l{
+    float: left !important;
+}
+
+.n_p_r{
+    float: right !important;
+}
+
+.fRight{
+    float: right;
+}
+
+.fLeft{
+    float: left;
+}
+
+.nota:nth-of-type(1) button{
+    background-color: red;
+    color: black;
+}
+.nota:nth-of-type(2) button{
+    background-color: rgb(255, 90, 0);
+    color: black;
+}
+.nota:nth-of-type(3) button{
+    background-color: rgb(255, 120, 0);
+    color: black;
+}
+.nota:nth-of-type(4) button{
+    background-color: rgb(255, 150, 0);
+    color: black;
+}
+.nota:nth-of-type(5) button{
+    background-color: rgb(255, 200, 0);
+    color: black;
+}
+.nota:nth-of-type(6) button{
+    background-color: rgb(255, 255, 0);
+    color: black;
+}
+.nota:nth-of-type(7) button{
+    background-color: rgb(233, 255, 40);
+    color: black;
+}
+.nota:nth-of-type(8) button{
+    background-color: rgb(214, 255, 65);
+    color: black;
+}
+.nota:nth-of-type(9) button{
+    background-color: rgb(200, 255, 34);
+    color: black;
+}
+.nota:nth-of-type(10) button{
+    background-color: rgb(150, 255, 0);
+    color: black;
+}
+.nota:nth-of-type(11) button{
+    background-color: rgb(0, 255, 0);
+    color: black;
+}
+
+/*  */
+
+.nota_five{
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    display: inline-block;
+    color: white;
+    margin: 5px;
+}
+
+.inp_nota{
+    display: none;
+}
+
+.nota_five .btn_five{
+    width: 100%;
+    height: 100%;
+    border-radius: 100% !important;
+    border: none;
+    box-shadow: none !important;
+    z-index: 99;
+    font-weight: bold;
+}
+
+.maxW{
+    max-width: 100%;
+}
+
+.btn_five:hover{
+    color: white !important;
+    background-color: black !important;
+}
+
+#f_p_1{
+    float: left;
+}
+
+#f_p_2{
+    float: right;
+}
+
+.nota_five:nth-of-type(1) button{
+    background-color: rgb(255, 0, 0);
+    color: black;
+}
+.nota_five:nth-of-type(2) button{
+    background-color: rgb(255, 115, 0);
+    color: black;
+}
+.nota_five:nth-of-type(3) button{
+    background-color: rgb(255, 230, 0);
+    color: black;
+}
+.nota_five:nth-of-type(4) button{
+    background-color: rgb(150, 200, 0);
+    color: black;
+}
+.nota_five:nth-of-type(5) button{
+    background-color: rgb(0, 255, 0);
+    color: black;
+}
+
+/*  */
+
+i{
+    font-size: 40px;
+}
+
+#e_0{
+    color: rgb(0, 255, 0);
+}
+#e_1{
+    color: rgb(57, 127, 0);
+}
+#e_2{
+    color: rgb(117, 117, 117);
+}
+#e_3{
+    color: rgb(200, 100, 0);
+}
+#e_4{
+    color: rgb(255, 0, 0);
+}
+
+.emojis{
+    margin: 0 auto;
+}
+
+.btn_emoji span{
+    margin: 10px;
+    font-size: 150%;
+}
+
+.text_emoji_align l{
+    margin-left: 50px;
+}
+
+.btn_emoji{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    box-shadow: none;
+    text-align: justify;
+    padding-left: 5%;
+    align-items: center;
+}
+
+.btn_emoji:hover{
+    background-color: rgba(163, 255, 255, 0.274) !important;
+    border-radius: 50px;
+}
+
+.n_p_l{
+    float: left !important;
+}
+
+.n_p_r{
+    float: right !important;
+}
+
+.fRight{
+    float: right;
+}
+
+.fLeft{
+    float: left;
+}
+
+.nota:nth-of-type(1) button{
+    background-color: red;
+    color: black;
+}
+.nota:nth-of-type(2) button{
+    background-color: rgb(255, 90, 0);
+    color: black;
+}
+.nota:nth-of-type(3) button{
+    background-color: rgb(255, 120, 0);
+    color: black;
+}
+.nota:nth-of-type(4) button{
+    background-color: rgb(255, 150, 0);
+    color: black;
+}
+.nota:nth-of-type(5) button{
+    background-color: rgb(255, 200, 0);
+    color: black;
+}
+.nota:nth-of-type(6) button{
+    background-color: rgb(255, 255, 0);
+    color: black;
+}
+.nota:nth-of-type(7) button{
+    background-color: rgb(233, 255, 40);
+    color: black;
+}
+.nota:nth-of-type(8) button{
+    background-color: rgb(214, 255, 65);
+    color: black;
+}
+.nota:nth-of-type(9) button{
+    background-color: rgb(200, 255, 34);
+    color: black;
+}
+.nota:nth-of-type(10) button{
+    background-color: rgb(150, 255, 0);
+    color: black;
+}
+.nota:nth-of-type(11) button{
+    background-color: rgb(0, 255, 0);
+    color: black;
+}
+
+.black{
+    color: white !important;
+    background-color: black !important;
+}
+
+.black2{
+    color: white !important;
+    background-color: black !important;
+}
+
+.gray{
+    background-color: rgba(0, 225, 255, 0.192);
+    border-radius: 50px;
+}
+
+.none{
+    display: none !important;
+}
