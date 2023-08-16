@@ -1,3 +1,16 @@
+//_____________________________________________________
+//      |                                      |
+//      |                                      |
+//      |                                      |
+//      |                                      |
+///////////////////////////////////////////////////////
+//|-------------------------------------------------|//
+//| Tempo passado nesse código : uma eternidade     |//
+//| Aumentar o tempo sempre que for alterado        |//
+//| Develop by Italo Braga                          |//
+//|-------------------------------------------------|//
+///////////////////////////////////////////////////////
+//      ^                                      ^
 function adicionarPergunta(tipo) {
     /* Função recebe o tipo de pergunta do botão adicionar precionado */
     let finded = false;
